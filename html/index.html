@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인 페이지</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
+    <header>
+        <img class="js-logo" src="../img/js-logo.png" />
+        <div class="now_date">
+            <div id="current_date">
+                <script>
+                    date = new Date();
+                    year = date.getFullYear();
+                    month = (date.getMonth()+1) < 9 ? "0" + (date.getMonth()+1) : (date.getMonth()+1);
+                    day = (date.getDate()) < 9 ? "0" + (date.getDate()) : (date.getDate());
+                    document.getElementById("current_date").innerHTML =  year + "년 " + month + "월 " + day + "일";
+                </script>
+            </div>
+        </div>
+        <div class="date-find">
+            <img class="school-img" src="../img/school.svg" />
+            <div class="choice-date">
+                <input type="date" id="currentDate" >
+                <script>
+                    date = new Date();
+                    document.getElementById('currentDate').valueAsDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+                </script>
+            </div>
+            <img class="find-img" src="../img/find.svg" />
+        </div>
+        <div class="my-page-button">
+            마이페이지
+        </div>
+    </header>
     
-</body>
+    <main>
+        
+            <div class="rectangle"></div>
+            <div class="overlap-3">
+                <div class="text-wrapper-4">01/20</div>
+                <div class="text-wrapper-5">어제</div>
+                <div class="flexcontainer">
+                    <p class="text">
+                    <span class="span">찹쌀밥<br /></span>
+                    </p>
+                    <p class="text">
+                    <span class="span">옹심이미역국<br /></span>
+                    </p>
+                    <p class="text">
+                    <span class="span">훈제오리야채볶음(1)18)<br /></span>
+                    </p>
+                    <p class="text">
+                    <span class="span">석박지(9)<br /></span>
+                    </p>
+                    <p class="text"><span class="span">요구르트(2)</span></p>
+                </div>
+            </div>
+    </main>
+    </body>
 </html>

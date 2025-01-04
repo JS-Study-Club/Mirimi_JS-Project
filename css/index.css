@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+header {
+    display: flex;
+}
+.js-logo {
+    width: 3.8vw;
+    height: 3.8vw;
+    margin-top: 1vw;
+    margin-left: 1.8vw;
+}
+
+.now_date {
+    border: solid 0;
+    font-family: "Noto Sans KR", serif;
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: white;
+    margin-left: 1.5vw;
+    margin-top: 1.8vw;
+    margin-bottom: 2vw;
+    background-color: lightgray;
+    padding-top: 0.7vw;
+    width: 11vw;
+    height: 1.9vw;
+    text-align: center;
+}
+
+.date-find {
+    width: 48vw;
+    margin-left: 8.8vw;
+    border: solid 0;
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-top: 1.7vw;
+    margin-bottom: 1.5vw;
+    display: flex;
+}
+
+.school-img {
+    width: 1.6vw;
+    margin-top: 0.1vw;
+    margin-left: 1.1vw;
+    margin-bottom: 0.1vw;
+}
+
+.choice-date {
+    display: flex;
+    align-items: center;
+    margin-left: 1vw;
+    background-color: transparent;
+}
+
+.find-img {
+    width: 1.6vw;
+    margin-left: auto;
+    margin-right: 1.1vw;
+}
+
+.my-page-button {
+    border: solid 0;
+    font-family: "Noto Sans KR", serif;
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: white;
+    margin-left: 11vw;
+    margin-top: 1.8vw;
+    margin-bottom: 2vw;
+    background-color: lightgray;
+    padding-top: 0.7vw;
+    width: 6.5vw;
+    height: 1.9vw;
+    text-align: center;
+}
