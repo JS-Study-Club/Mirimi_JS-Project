@@ -32,17 +32,46 @@
             </div>
             <img class="find-img" src="../img/find.svg" />
         </div>
-        <div class="my-page-button">
+        <a href="my-page.html" class="my-page-button">
             마이페이지
-        </div>
+        </a>
     </header>
+
+    <aside>
+        <div class="button-container">
+            <a href="#yesterday" class="button">어제</a>
+            <a href="#today" class="button">오늘</a>
+            <a href="#tomorrow" class="button">내일</a>
+            <script>
+                var button = document.getElementsByClassName("button");
+                function handleClick(event) {
+
+                if (event.target.classList[1] === "clicked") {
+                    event.target.classList.remove("clicked");
+                } else {
+                    for (var i = 0; i < button.length; i++) {
+                        button[i].classList.remove("clicked");
+                    }
+
+                    event.target.classList.add("clicked");
+                }
+                }
+
+                function init() {
+                for (var i = 0; i < button.length; i++) {
+                    button[i].addEventListener("click", handleClick);
+                }
+                }
+
+                init();
+            </script>
+        </div>
+    </aside>
     
     <main>
         
             <div class="rectangle"></div>
             <div class="overlap-3">
-                <div class="text-wrapper-4">01/20</div>
-                <div class="text-wrapper-5">어제</div>
                 <div class="flexcontainer">
                     <p class="text">
                     <span class="span">찹쌀밥<br /></span>

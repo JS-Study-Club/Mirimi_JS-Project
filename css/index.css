@@ -13,27 +13,27 @@ header {
 .now_date {
     border: solid 0;
     font-family: "Noto Sans KR", serif;
-    font-size: 1.1vw;
+    font-size: 1.1vmax;
     font-weight: bold;
     color: white;
     margin-left: 1.5vw;
-    margin-top: 1.8vw;
+    margin-top: 2vw;
     margin-bottom: 2vw;
     background-color: lightgray;
     padding-top: 0.7vw;
-    width: 11vw;
-    height: 1.9vw;
+    width: 11vmax;
+    height: 1.9vmax;
     text-align: center;
 }
 
 .date-find {
-    width: 48vw;
-    margin-left: 8.8vw;
+    width: 48vmax;
+    margin-left: 8vw;
     border: solid 0;
     background-color: lightgray;
     border-radius: 10px;
     margin-top: 1.7vw;
-    margin-bottom: 1.5vw;
+    margin-bottom: 1.7vw;
     display: flex;
 }
 
@@ -60,7 +60,7 @@ header {
 .my-page-button {
     border: solid 0;
     font-family: "Noto Sans KR", serif;
-    font-size: 1.1vw;
+    font-size: 1.1vmax;
     font-weight: bold;
     color: white;
     margin-left: 11vw;
@@ -68,7 +68,38 @@ header {
     margin-bottom: 2vw;
     background-color: lightgray;
     padding-top: 0.7vw;
-    width: 6.5vw;
-    height: 1.9vw;
+    width: 6.5vmax;
+    height: 1.9vmax;
     text-align: center;
+    text-decoration: none;
+}
+
+.button-container {
+    display: grid;
+    margin-top: 8vw;
+    margin-left: 15vw;
+}
+
+.button {
+    margin-bottom: 1.6vw;
+    border: solid 2;
+    border-width: 0.2vw;
+    border-radius: 8px;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 3.6vw;
+    height: 3.6vw;
+    width: 14.2vw;
+    font-family: "Noto Sans KR", serif;
+    font-weight: bold;
+    font-size: 1.3vmax;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.clicked {
+    border: solid;
+    border-color: #FF03A5;
+    border-width: 0.2vw;
 }
