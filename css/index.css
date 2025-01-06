@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap');
 
+body {
+    background-color: #fdffb6;
+}
+
 header {
     display: flex;
 }
@@ -19,7 +23,7 @@ header {
     margin-left: 1.5vw;
     margin-top: 2vw;
     margin-bottom: 2vw;
-    background-color: lightgray;
+    background-color: black;
     padding-top: 0.7vw;
     width: 11vmax;
     height: 1.9vmax;
@@ -30,7 +34,7 @@ header {
     width: 48vmax;
     margin-left: 8vw;
     border: solid 0;
-    background-color: lightgray;
+    background-color: white;
     border-radius: 10px;
     margin-top: 1.7vw;
     margin-bottom: 1.7vw;
@@ -63,15 +67,19 @@ header {
     font-size: 1.1vmax;
     font-weight: bold;
     color: white;
-    margin-left: 11vw;
-    margin-top: 1.8vw;
+    margin-left: 17.5vw;
+    margin-top: 2vw;
     margin-bottom: 2vw;
-    background-color: lightgray;
+    background-color: #168916;
     padding-top: 0.7vw;
-    width: 6.5vmax;
-    height: 1.9vmax;
+    width: 6.8vmax;
+    height: 1.8vmax;
     text-align: center;
     text-decoration: none;
+}
+
+aside {
+    float: left;
 }
 
 .button-container {
@@ -85,7 +93,7 @@ header {
     border: solid 2;
     border-width: 0.2vw;
     border-radius: 8px;
-    background-color: lightgray;
+    background-color: white;
     text-align: center;
     line-height: 3.6vw;
     height: 3.6vw;
@@ -102,4 +110,25 @@ header {
     border: solid;
     border-color: #FF03A5;
     border-width: 0.2vw;
+}
+
+main {
+    float: left;
+}
+
+.school-meals-container {
+    display: flex;
+    margin-left: 4vw;
+    margin-top: 4.5vw;
+}
+
+.school-meals {
+    margin-right: 0.5vw;
+    border: solid;
+    border-width: 0.3vw;
+    border-radius: 8px;
+    border-color: gray;
+    width: 16.5vw;
+    height: 21vw;
+    background-color: white;
 }
