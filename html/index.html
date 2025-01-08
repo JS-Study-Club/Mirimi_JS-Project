@@ -24,13 +24,15 @@
         <div class="date-find">
             <img class="school-img" src="../img/school.svg" />
             <div class="choice-date">
-                <input type="date" id="currentDate" >
+                <input type="date" id="dateInput" >
                 <script>
                     date = new Date();
-                    document.getElementById('currentDate').valueAsDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+                    document.getElementById('dateInput').valueAsDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
                 </script>
             </div>
-            <img class="find-img" src="../img/find.svg" />
+            <button type="button" class="input-date">
+                <img src="../img/find.svg" onclick="getMealInfo()" class="button-img">
+            </button>
         </div>
         <a href="my-page.html" class="my-page-button">
             마이페이지
@@ -48,21 +50,21 @@
 
                 if (event.target.classList[1] === "clicked") {
                     event.target.classList.remove("clicked");
-                } else {
+                } 
+                else {
                     for (var i = 0; i < button.length; i++) {
                         button[i].classList.remove("clicked");
                     }
 
                     event.target.classList.add("clicked");
-                }
+                    }
                 }
 
                 function init() {
-                for (var i = 0; i < button.length; i++) {
-                    button[i].addEventListener("click", handleClick);
+                    for (var i = 0; i < button.length; i++) {
+                        button[i].addEventListener("click", handleClick);
+                    }
                 }
-                }
-
                 init();
             </script>
         </div>

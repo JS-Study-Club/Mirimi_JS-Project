@@ -55,10 +55,28 @@ header {
     background-color: transparent;
 }
 
-.find-img {
-    width: 1.6vw;
+.input-date {
+    border: 0;
+    background-color: transparent;
     margin-left: auto;
-    margin-right: 1.1vw;
+    margin-right: 1vw;
+}
+
+.input-date:hover {
+    background-color: rgb(249, 249, 249);
+}
+
+/* .input-datea:focus {
+    background-color: gray;
+    border: 0;
+} */
+
+.input-date:active {
+    background-color: rgb(218, 218, 218);
+}
+
+.button-img {
+    width: 1.5vw;
 }
 
 .my-page-button {
