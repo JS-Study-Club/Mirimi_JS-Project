@@ -8,6 +8,9 @@
 - HTML + CSS + JS
 - MySQL
 
+## API
+- 나이스(Neis) Open API
+
 ## 멤버
 <b>[Front]</b>
 - 윤시웅
