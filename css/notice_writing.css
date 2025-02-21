@@ -1,0 +1,44 @@
+#post_title{
+    margin: 0.5vw;
+    margin-left: 1.2vw;
+    width: 11vw;
+    height: 7vh;
+    border: 1px solid #000;
+    background: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+}
+button{
+    margin: 0.8vh;
+    margin-top: 0.9vw;
+    width: 6vw;
+    height: 6vh;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+}
+#top{
+    display: flex;
+    margin-left: 15vw;
+}
+#textbox{
+    display: grid;
+    place-items: center;
+}
+input[name="title"]{
+    height: 5vh;
+    width: 65vw;
+}
+textarea[name="detail"]{
+    width: 65vw;
+    height: 50vh;
+    /* width: 1000px;
+    height: 400px; */
+    resize: none;
+    margin-top: -2vh;
+    margin-bottom: 5vh;
+}
