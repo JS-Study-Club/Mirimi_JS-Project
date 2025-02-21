@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>시간표 페이지</title>
+    <title>게시판 글쓰기</title>
     <link rel="stylesheet" href="../css/timetable.css">
-    
+    <link rel="stylesheet" href="../css/notice_writing.css">
 </head>
 <body>
     <header>
@@ -53,72 +53,30 @@
     </header>
     <hr>
     <main>
-        <table>
-            <tr>
-                <th></th>
-                <th>월</th>
-                <th>화</th>
-                <th>수</th>
-                <th>목</th>
-                <th>금</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        <div id="top">
+            <div id="post_title">게시판 글쓰기</div>
+            <button type="submit" onclick="alert('작성완료!')">등록</button>
+            <button id="delete">삭제</button>
+        </div>
+        
+        <script>
+            document.getElementById("delete").addEventListener("click", function(){
+                if(confirm("정말 삭제하시겠습니까?")){
+                    fetch("/delete-post", {method:"POST"}) //fetch(): 서버와 통신하는 기능을 제공하는 함수. /delete-post: 삭제요청을 보낼 서버의 주소. method: "POST": http 요청방식
+                    .then(()=>{
+                        alert("삭제되었습니다.");
+                        location.href = "#" //게시판 목록으로 이동
+                    })
+                    .catch(()=> alert("삭제 실패"));
+                }
+            });
+        </script>
+        <form action="#" method="post"></form> <!--게시판 페이지로 돌아감-->
+        <div id="textbox">
+            <input type="text" placeholder="제목을 입력하세요." name="title"> <br>
+            <textarea placeholder="내용을 입력하세요." name="detail"></textarea>
+        </div>
+        
         <div id="rec">
             <div id="blue_box">
                 <span id="date2"></span>
@@ -130,11 +88,11 @@
 
             <script>
                 function current_time(){
-                    const noww = new Date();
-                    const hours = noww.getHours();
-                    const minutes = String(noww.getMinutes()).padStart(2, "0"); //0을 붙여서 두 자릿수 유지
+                    const now = new Date();
+                    const hours = now.getHours();
+                    const minutes = String(now.getMinutes()).padStart(2, "0"); //0을 붙여서 두 자릿수 유지
 
-                    document.getElementById("date2").innerText = `${noww.getFullYear()}.${noww.getMonth() + 1}.${noww.getDate()}`;
+                    document.getElementById("date2").innerText = `${now.getFullYear()}.${now.getMonth() + 1}.${now.getDate()}`;
 
                     document.getElementById("ampm").innerText = hours >= 12 ? "오후" : "오전";
                     document.getElementById("time").innerText = `${String(hours % 12 || 12).padStart(2, "0")}:${minutes}`;
@@ -179,7 +137,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script>
         function background(){
             let now = new Date().getHours();
