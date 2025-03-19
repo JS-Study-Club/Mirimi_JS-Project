@@ -9,20 +9,38 @@
 </head>
 <body>
     <header>
-        <img class="js-logo" src="../img/js-logo.png" />
-        <div class="now_date">
-            <div id="current_date">
-                <script>
-                    date = new Date();
-                    year = date.getFullYear();
-                    month = (date.getMonth()+1) < 9 ? "0" + (date.getMonth()+1) : (date.getMonth()+1);
-                    day = (date.getDate()) < 9 ? "0" + (date.getDate()) : (date.getDate());
-                    document.getElementById("current_date").innerHTML =  year + "년 " + month + "월 " + day + "일";
-                </script>
-            </div>
+        <div id="moon"></div>
+        <div id="info">
+            <span id="account_cir"><img src="../img/eva_person-outline.png"></span>
+            <span id="stu_id">0학년 0반 김00</span>
         </div>
-        <div class="date-find">
-            <img class="school-img" src="../img/school.svg" />
+        <div id="me">
+            <a href="../html/timetable.html" class="menu">
+                <div>
+                    <img src="../img/School.png" class="menu_img">
+                    <span class="menu_text">시간표</span>
+                </div>   
+            </a>  
+            <a href="" class="menu"> 
+                <div>
+                    <img src="../img/Board.png" class="menu_img">
+                    <span class="menu_text">게시판</span>
+                </div> 
+            </a>
+            <a href="../html/notice_writing.html" class="menu">   
+                <div>  
+                    <img src="../img/Board.png" class="menu_img">
+                    <span class="menu_text">글작성</span>
+                </div> 
+            </a>
+            <a href="" class="menu">
+                <div>
+                    <img src="../img/Rice.png" id="menu_img">
+                    <span class="menu_text">급식표</span>
+                </div>
+            </a>    
+        </div>
+        <div id="date">
             <div class="choice-date">
                 <input type="date" id="dateInput" >
                 <script>
@@ -30,16 +48,20 @@
                     document.getElementById('dateInput').valueAsDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
                 </script>
             </div>
-            <button type="button" class="input-date">
-                <img src="../img/find.svg" onclick="getMealInfo()" class="button-img">
-                <script src="../js/food_script.js"></script>
-            </button>
+            <div class="input-date">
+                <button type="button">
+                    <img src="../img/Find.png" onclick="getMealInfo()" class="button-img">
+                    <script src="../js/food_script.js"></script>
+                </button>
+            </div>
         </div>
-        <a href="my-page.html" class="my-page-button">
-            마이페이지
+        <a href="" id="mypage_icon">
+            <div id="mypage_img">
+                <img src="../img/eva_person-outline.png">
+            </div>
         </a>
     </header>
-
+    <hr>
     <aside>
         <div class="button-container">
             <a href="#yesterday" class="button">어제</a>
@@ -84,5 +106,92 @@
             </div>
         </div>
     </main>
-    </body>
+
+    <div id="rec">
+        <div id="blue_box">
+            <span id="date2"></span>
+            <div id="time_box">
+                <span id="ampm"></span>
+                <span id="time"></span>  
+            </div>
+        </div>
+
+        <script>
+            function current_time(){
+                const noww = new Date();
+                const hours = noww.getHours();
+                const minutes = String(noww.getMinutes()).padStart(2, "0"); //0을 붙여서 두 자릿수 유지
+
+                document.getElementById("date2").innerText = `${noww.getFullYear()}.${noww.getMonth() + 1}.${noww.getDate()}`;
+                document.getElementById("ampm").innerText = hours >= 12 ? "오후" : "오전";
+                document.getElementById("time").innerText = `${String(hours % 12 || 12).padStart(2, "0")}:${minutes}`;
+            }
+            // 1초마다 업데이트
+            setInterval(current_time, 1000);
+            current_time();
+        </script>
+
+        <div id="beige_box">
+            <a href="">
+                <div id="class_table">
+                    <div><img src="../img/School.png"></div>
+                    <div><span>
+                        우리반 <br>
+                        시간표 보기
+                    </span></div>
+                </div>
+            </a>
+
+            <a href="">
+                <div id="board">
+                    <div><img src="../img/Board.png"></div>
+                    <div><span>
+                        우리학교 도움 <br>
+                        요청 게시판 보기
+                    </span></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</main>
+<hr>
+<footer>
+    <img src="../img/logo.png" id="footer_img">
+    <div id="footer_text">
+        <p><a href="">작성자저작권정보</a> | <a href="https://www.instagram.com/js_mirim/">JS인스타공개</a> | <a href="">학교정보공개</a></p>
+        <div>
+            <p>서울시  관악구 호람로 546 (신림동)  미림마이스터고등학교  JS 스터디 커뮤니티 센터</p>
+            <p>JS 부장   s2455@e-mirim.hs.kr | JS 부부장   s2455@e-mirim.hs.kr | 디자인팀  김설애 | 개발팀  김민재 / 곽자경 / 윤시웅 / 이서영</p>
+            <p>546 Hoam-ro, Gwanak-gu, Seoul, 08821 Korea | MIRIM MEISTER SCHOOL  JS STUDY</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function background(){
+        let now = new Date().getHours();
+        console.log(now);
+        let imageContainer = document.getElementById("moon");
+        let img = document.createElement("img");
+        img.style.width = "3vw";
+        let time_box = document.getElementById("blue_box");
+        let box = document
+
+        if(now >= 6 && now < 18){
+            document.body.style.background = "linear-gradient(to bottom, rgba(168, 251, 255, 0.48), #FFFFFF)";
+            img.src = "../img/day.png";
+            time_box.style.backgroundColor = "#7ABFFF";
+            time_box.style.color = "#000000";
+        } else{
+            document.body.style.background = "linear-gradient(to bottom, #223056, #FFFFFF)";
+            time_box.style.backgroundColor = "#2C4982";
+            time_box.style.color = "#ffffff"
+            img.src = "../img/night.png";
+        }
+        document.body.style.backgroundAttachment = "fixed";
+        imageContainer.appendChild(img);
+    }
+    background(); // 페이지 로드 시 실행
+</script>
+</body>
 </html>

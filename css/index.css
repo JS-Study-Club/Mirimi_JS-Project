@@ -1,94 +1,206 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap');
-
-body {
-    background-color: #fdffb6;
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+*{
+    text-decoration: none;
 }
-
-header {
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+header{
     display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 1.5vw;
 }
-.js-logo {
-    width: 3.8vw;
-    height: 3.8vw;
-    margin-top: 1vw;
-    margin-left: 1.8vw;
+header span{
+    color: #000;
+}
+hr{
+    color: #515151;
+}
+/* #sun{
+    width: 4vw;
+    height: 4vw;
+    margin-left: -2vw;
+} */
+
+#info{
+    width: 12.5vw;
+    height: 6vh;
+    border: 1px solid;
+    background-color: #fff;
+    gap: 1vw;
+    margin-left: -3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.now_date {
-    border: solid 0;
-    font-family: "Noto Sans KR", serif;
-    font-size: 1.1vmax;
-    font-weight: bold;
-    color: white;
-    margin-left: 1.5vw;
-    margin-top: 2vw;
-    margin-bottom: 2vw;
-    background-color: black;
-    padding-top: 0.7vw;
-    width: 11vmax;
-    height: 1.9vmax;
+#account_cir{
+    background-color: #D9D9D9;
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin-left: -1vw;
+}
+#stu_id{
+    text-align: center;
+    font-family: Noto Sans KR;
+    font-size: 1vw;
+    font-weight: 400;
+}
+
+.menu{
+    margin-bottom: -50vw;
+    width: 9vw;
+    height: 6vh;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.menu_img{
+    width: 2vw;
+    height: 2vw;
+}
+#menu_text{
     text-align: center;
 }
 
-.date-find {
-    width: 48vmax;
-    margin-left: 8vw;
-    border: solid 0;
-    background-color: white;
-    border-radius: 10px;
-    margin-top: 1.7vw;
-    margin-bottom: 1.7vw;
+#me{
     display: flex;
+    font-weight: 700;
 }
-
-.school-img {
-    width: 1.6vw;
-    margin-top: 0.1vw;
-    margin-left: 1.1vw;
-    margin-bottom: 0.1vw;
-}
-
-.choice-date {
-    display: flex;
+#mypage_icon{
+    width: 3vw;
+    height: 3vw;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
+    justify-content: center;
     align-items: center;
-    margin-left: 1vw;
-    background-color: transparent;
+    justify-items: center;
+    align-content: center;
 }
+/* #mypage_img{
+    justify-content: center;
+    align-content: center;
+} */
 
+table{
+    border: 1px solid;
+    width: 40vw;
+    height: 68vh;
+    margin: auto;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    background-color: #fff;
+    text-align: center;
+}
+#rec{
+    width: 86vw;
+    height: 16vw;
+    border-radius: 1vw;
+    border: 5px solid #2475D6;
+    background-color: #fff;
+    margin: auto;
+    margin-bottom: 5vw;
+    display: flex;
+    column-gap: 20vw;
+    align-items: center;
+    justify-content: center;
+}
+#blue_box{
+    width: 20vw;
+    height: 24.2vh;
+    border-radius: 10px;
+    color: #7ABFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#date {
+    margin-right: -5vw;
+}
+input {
+    height: 2.8vw;
+    width: 18vw;
+    border-radius: 15px;
+}
 .input-date {
+    margin-top: -3vw;
+    margin-left: 14.5vw;
+}
+.input-date > button {
+    margin-left: 0.4vw;
+    margin-top: 0.6vw;
+    background-color: rgba(0, 0, 0, 0);
     border: 0;
-    background-color: transparent;
-    margin-left: auto;
-    margin-right: 1vw;
 }
-
-.input-date:hover {
-    background-color: rgb(249, 249, 249);
-}
-
-.input-date:active {
-    background-color: rgb(218, 218, 218);
-}
-
 .button-img {
     width: 1.5vw;
+    height: 1.5vw;
 }
 
-.my-page-button {
-    border: solid 0;
-    font-family: "Noto Sans KR", serif;
-    font-size: 1.1vmax;
-    font-weight: bold;
-    color: white;
-    margin-left: 17.5vw;
-    margin-top: 2vw;
-    margin-bottom: 2vw;
-    background-color: #168916;
-    padding-top: 0.7vw;
-    width: 6.8vmax;
-    height: 1.8vmax;
-    text-align: center;
-    text-decoration: none;
+#ampm{
+    font-size: 1.5vw;
+    font-weight: 700;
+}
+#time{
+    font-size: 3.3vw;
+    font-weight: 700;
+}
+#beige_box{
+    display: flex;
+    column-gap: 3vw;    
+}
+#class_table, #board{
+    width: 17vw;
+    height: 9vw;
+    border-radius: 10px;
+    background: #FFE5A3;
+    display: flex;
+}
+#beige_box div{
+    column-gap: 2vw;
+}
+#beige_box img{
+    width: 4vw;
+    height: 4vw;
+}
+#class_table, #board{
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-family: "Noto Sans KR";
+    font-size: 1.2vw;
+    font-weight: 700;
+    
+}
+
+footer{
+    display: flex;
+    gap: 2vw;
+    font-family: "Noto Nastaliq Urdu";
+    color: #929292;
+}  
+#footer_img{
+    width: 9vw;
+    height: 9vw;
+}  
+footer a{
+    color: #000;
+    font-weight: 700;
+}
+footer hr{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
 aside {
@@ -121,7 +233,7 @@ aside {
 
 .clicked {
     border: solid;
-    border-color: #FF03A5;
+    border-color: #2475D6;
     border-width: 0.2vw;
 }
 
@@ -145,3 +257,4 @@ main {
     height: 21vw;
     background-color: white;
 }
+

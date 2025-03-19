@@ -17,33 +17,43 @@
         <div id="me">
             <a href="../html/timetable.html" class="menu">
                 <div>
-                    <img src="../img/Group 5.png" class="menu_img">
+                    <img src="../img/School.png" class="menu_img">
                     <span class="menu_text">시간표</span>
                 </div>   
             </a>  
             <a href="" class="menu"> 
                 <div>
-                    <img src="../img/Group 4.png" class="menu_img">
+                    <img src="../img/Board.png" class="menu_img">
                     <span class="menu_text">게시판</span>
                 </div> 
             </a>
             <a href="../html/notice_writing.html" class="menu">   
                 <div>  
-                    <img src="../img/Group 4.png" class="menu_img">
+                    <img src="../img/Board.png" class="menu_img">
                     <span class="menu_text">글작성</span>
                 </div> 
             </a>
             <a href="" class="menu">
                 <div>
-                    <img src="../img/Group 32.png" id="menu_img">
+                    <img src="../img/Rice.png" id="menu_img">
                     <span class="menu_text">급식표</span>
                 </div>
             </a>    
         </div>
         <div id="date">
-            <form action="">
-                <input type="date">
-            </form>
+            <div class="choice-date">
+                <input type="date" id="dateInput" >
+                <script>
+                    date = new Date();
+                    document.getElementById('dateInput').valueAsDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+                </script>
+            </div>
+            <div class="input-date">
+                <button type="button">
+                    <img src="../img/Find.png" onclick="" class="button-img">
+                    <script src="../js/timetable.js"></script>
+                </button>
+            </div>
         </div>
         <a href="" id="mypage_icon">
             <div id="mypage_img">
@@ -135,7 +145,6 @@
                     const minutes = String(noww.getMinutes()).padStart(2, "0"); //0을 붙여서 두 자릿수 유지
 
                     document.getElementById("date2").innerText = `${noww.getFullYear()}.${noww.getMonth() + 1}.${noww.getDate()}`;
-
                     document.getElementById("ampm").innerText = hours >= 12 ? "오후" : "오전";
                     document.getElementById("time").innerText = `${String(hours % 12 || 12).padStart(2, "0")}:${minutes}`;
                 }
@@ -147,7 +156,7 @@
             <div id="beige_box">
                 <a href="">
                     <div id="class_table">
-                        <div><img src="../img/Group 5.png"></div>
+                        <div><img src="../img/School.png"></div>
                         <div><span>
                             우리반 <br>
                             시간표 보기
@@ -157,7 +166,7 @@
 
                 <a href="">
                     <div id="board">
-                        <div><img src="../img/Group 4.png"></div>
+                        <div><img src="../img/Board.png"></div>
                         <div><span>
                             우리학교 도움 <br>
                             요청 게시판 보기
@@ -186,22 +195,25 @@
             console.log(now);
             let imageContainer = document.getElementById("moon");
             let img = document.createElement("img");
-            img.style.width = "4vw";
+            img.style.width = "3vw";
+            let time_box = document.getElementById("blue_box");
+            let box = document
 
             if(now >= 6 && now < 18){
                 document.body.style.background = "linear-gradient(to bottom, rgba(168, 251, 255, 0.48), #FFFFFF)";
-                img.src = "../img/Vector.png";
+                img.src = "../img/day.png";
+                time_box.style.backgroundColor = "#7ABFFF";
+                time_box.style.color = "#000000";
             } else{
                 document.body.style.background = "linear-gradient(to bottom, #223056, #FFFFFF)";
-		        let box = document.getElementById("blue_box");
-                box.style.backgroundColor = "#2C4982";
-                img.src = "../img/moon.png";
+                time_box.style.backgroundColor = "#2C4982";
+                time_box.style.color = "#ffffff"
+                img.src = "../img/night.png";
             }
             document.body.style.backgroundAttachment = "fixed";
             imageContainer.appendChild(img);
         }
         background(); // 페이지 로드 시 실행
-        setInterval(background, 60000); // 1분마다 업데이트
     </script>
 </body>
 </html>
