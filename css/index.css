@@ -7,101 +7,6 @@ html{
     padding: 0;
     height: 100%;
 }
-header{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-    margin-bottom: 1.5vw;
-}
-header span{
-    color: #000;
-}
-hr{
-    color: #515151;
-}
-/* #sun{
-    width: 4vw;
-    height: 4vw;
-    margin-left: -2vw;
-} */
-
-#info{
-    width: 12.5vw;
-    height: 6vh;
-    border: 1px solid;
-    background-color: #fff;
-    gap: 1vw;
-    margin-left: -3vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#account_cir{
-    background-color: #D9D9D9;
-    width: 2.5vw;
-    height: 2.5vw;
-    border-radius: 50%;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    margin-left: -1vw;
-}
-#stu_id{
-    text-align: center;
-    font-family: Noto Sans KR;
-    font-size: 1vw;
-    font-weight: 400;
-}
-
-.menu{
-    margin-bottom: -50vw;
-    width: 9vw;
-    height: 6vh;
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} 
-.menu_img{
-    width: 2vw;
-    height: 2vw;
-}
-#menu_text{
-    text-align: center;
-}
-
-#me{
-    display: flex;
-    font-weight: 700;
-}
-#mypage_icon{
-    width: 3vw;
-    height: 3vw;
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    align-content: center;
-}
-/* #mypage_img{
-    justify-content: center;
-    align-content: center;
-} */
-
-table{
-    border: 1px solid;
-    width: 40vw;
-    height: 68vh;
-    margin: auto;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    background-color: #fff;
-    text-align: center;
-}
 #rec{
     width: 86vw;
     height: 16vw;
@@ -237,6 +142,12 @@ aside {
     border-width: 0.2vw;
 }
 
+.non_clicked {
+    border: solid;
+    border-color: #333333;
+    border-width: 0.1vw;
+}
+
 main {
     float: left;
 }
@@ -245,6 +156,7 @@ main {
     display: flex;
     margin-left: 4vw;
     margin-top: 4.5vw;
+    margin-bottom: 4vw;
 }
 
 .school-meals {
@@ -253,8 +165,8 @@ main {
     border-width: 0.3vw;
     border-radius: 8px;
     border-color: gray;
-    width: 16.5vw;
-    height: 21vw;
+    width: 14.5vw;
+    height: 19.5vw;
     background-color: white;
 }
 

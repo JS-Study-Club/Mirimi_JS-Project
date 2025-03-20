@@ -6,6 +6,9 @@
     <title>메인 페이지</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <script src="../js/food_script.js"></script>
+    <script src="../js/background.js"></script>
 </head>
 <body>
     <header>
@@ -15,7 +18,7 @@
             <span id="stu_id">0학년 0반 김00</span>
         </div>
         <div id="me">
-            <a href="../html/timetable.html" class="menu">
+            <a href="timetable.html" class="menu">
                 <div>
                     <img src="../img/School.png" class="menu_img">
                     <span class="menu_text">시간표</span>
@@ -33,7 +36,7 @@
                     <span class="menu_text">글작성</span>
                 </div> 
             </a>
-            <a href="" class="menu">
+            <a href="index.html" class="menu">
                 <div>
                     <img src="../img/Rice.png" id="menu_img">
                     <span class="menu_text">급식표</span>
@@ -50,8 +53,12 @@
             </div>
             <div class="input-date">
                 <button type="button">
-                    <img src="../img/Find.png" onclick="getMealInfo()" class="button-img">
-                    <script src="../js/food_script.js"></script>
+                    <img src="../img/Find.png" onclick="toInfo()" class="button-img">
+                    <script>
+                        function toInfo() {
+                            getMealInfo(document.getElementById("dateInput").value.toString().replace(/-/g, ''));
+                        }
+                    </script>
                 </button>
             </div>
         </div>
@@ -64,9 +71,9 @@
     <hr>
     <aside>
         <div class="button-container">
-            <a href="#yesterday" class="button">어제</a>
-            <a href="#today" class="button">오늘</a>
-            <a href="#tomorrow" class="button">내일</a>
+            <a href="#yesterday" class="button" onclick="MealDays(-1)">어제</a>
+            <a href="#today" class="button" onclick="MealDays(0)">오늘</a>
+            <a href="#tomorrow" class="button" onclick="MealDays(1)">내일</a>
             <script>
                 var button = document.getElementsByClassName("button");
                 function handleClick(event) {
@@ -77,8 +84,10 @@
                 else {
                     for (var i = 0; i < button.length; i++) {
                         button[i].classList.remove("clicked");
+                        button[i].classList.add("non_clicked")
                     }
 
+                    event.target.classList.remove("non_clicked");
                     event.target.classList.add("clicked");
                     }
                 }
@@ -96,12 +105,15 @@
     <main>
         <div class="school-meals-container">
             <div class="school-meals">
+                <p class="meals_head">조식</p>
                 <ul id="breakfastMenu"></ul>
             </div>
             <div class="school-meals">
+                <p class="meals_head">석식</p>
                 <ul id="lunchMenu"></ul>
             </div>
             <div class="school-meals">
+                <p class="meals_head">중식</p>
                 <ul id="dinnerMenu"></ul>
             </div>
         </div>
@@ -168,29 +180,34 @@
 </footer>
 
 <script>
-    function background(){
-        let now = new Date().getHours();
-        console.log(now);
-        let imageContainer = document.getElementById("moon");
-        let img = document.createElement("img");
-        img.style.width = "3vw";
-        let time_box = document.getElementById("blue_box");
-        let box = document
-
-        if(now >= 6 && now < 18){
-            document.body.style.background = "linear-gradient(to bottom, rgba(168, 251, 255, 0.48), #FFFFFF)";
-            img.src = "../img/day.png";
-            time_box.style.backgroundColor = "#7ABFFF";
-            time_box.style.color = "#000000";
-        } else{
-            document.body.style.background = "linear-gradient(to bottom, #223056, #FFFFFF)";
-            time_box.style.backgroundColor = "#2C4982";
-            time_box.style.color = "#ffffff"
-            img.src = "../img/night.png";
+    function MealDays(day) {
+        now = new Date();
+        console.log(day);
+        if (day === 1) {
+            var tomorrow = new Date(now.setDate(now.getDate() + 1));
+            year = tomorrow.getFullYear();
+            month = tomorrow.getMonth()+1;
+            date = tomorrow.getDate();
         }
-        document.body.style.backgroundAttachment = "fixed";
-        imageContainer.appendChild(img);
-    }
+
+        else if (day === -1) {
+            var tomorrow = new Date(now.setDate(now.getDate() - 1));
+            year = tomorrow.getFullYear();
+            month = tomorrow.getMonth()+1;
+            date = tomorrow.getDate();
+        }
+
+        else {
+            var tomorrow = new Date(now.setDate(now.getDate()));
+            year = tomorrow.getFullYear();
+            month = tomorrow.getMonth()+1;
+            date = tomorrow.getDate();
+        }
+                    
+            getMealInfo(`${year}-${month >= 10 ? month : '0' + month}-${date >= 10 ? date : '0' + date}`);
+        }
+
+    
     background(); // 페이지 로드 시 실행
 </script>
 </body>
