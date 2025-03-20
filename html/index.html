@@ -182,7 +182,7 @@
 <script>
     function MealDays(day) {
         now = new Date();
-        console.log(day);
+        // console.log(day);
         if (day === 1) {
             var tomorrow = new Date(now.setDate(now.getDate() + 1));
             year = tomorrow.getFullYear();
@@ -203,9 +203,8 @@
             month = tomorrow.getMonth()+1;
             date = tomorrow.getDate();
         }
-                    
-            getMealInfo(`${year}-${month >= 10 ? month : '0' + month}-${date >= 10 ? date : '0' + date}`);
-        }
+        getMealInfo(`${year}${month >= 10 ? month : '0' + month}${date >= 10 ? date : '0' + date}`);
+    }
 
     
     background(); // 페이지 로드 시 실행
