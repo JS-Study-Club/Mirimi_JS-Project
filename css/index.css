@@ -22,7 +22,7 @@ html{
 }
 #blue_box{
     width: 20vw;
-    height: 24.2vh;
+    height: 14vw;
     border-radius: 10px;
     color: #7ABFFF;
     display: flex;
@@ -54,67 +54,13 @@ input {
     height: 1.5vw;
 }
 
-#ampm{
-    font-size: 1.5vw;
-    font-weight: 700;
-}
-#time{
-    font-size: 3.3vw;
-    font-weight: 700;
-}
-#beige_box{
-    display: flex;
-    column-gap: 3vw;    
-}
-#class_table, #board{
-    width: 17vw;
-    height: 9vw;
-    border-radius: 10px;
-    background: #FFE5A3;
-    display: flex;
-}
-#beige_box div{
-    column-gap: 2vw;
-}
-#beige_box img{
-    width: 4vw;
-    height: 4vw;
-}
-#class_table, #board{
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    font-family: "Noto Sans KR";
-    font-size: 1.2vw;
-    font-weight: 700;
-    
-}
-
-footer{
-    display: flex;
-    gap: 2vw;
-    font-family: "Noto Nastaliq Urdu";
-    color: #929292;
-}  
-#footer_img{
-    width: 9vw;
-    height: 9vw;
-}  
-footer a{
-    color: #000;
-    font-weight: 700;
-}
-footer hr{
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-}
-
 aside {
     float: left;
 }
 
 .button-container {
     display: grid;
-    margin-top: 8vw;
+    margin-top: 7.5vw;
     margin-left: 15vw;
 }
 
@@ -162,11 +108,36 @@ main {
 .school-meals {
     margin-right: 0.5vw;
     border: solid;
-    border-width: 0.3vw;
+    border-width: 0.2vw;
     border-radius: 8px;
     border-color: gray;
     width: 14.5vw;
     height: 19.5vw;
+    position: relative;
     background-color: white;
 }
 
+.meals_head {
+    margin-top: 1vw;
+    text-align: center;
+    font-family: Noto Sans KR;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.menuList {
+    margin-top: 1vw;
+    text-align: center;
+}
+
+.menuList > li {
+    margin-bottom: 0.5vw;
+}
+
+#current_time_text {
+    position: absolute; bottom: 1vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8vw;
+    color: #333333;
+}

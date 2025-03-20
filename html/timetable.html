@@ -6,6 +6,8 @@
     <title>시간표 페이지</title>
     <link rel="stylesheet" href="../css/timetable.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/timetable.js"></script>
 </head>
 <body>
     <header>
@@ -29,7 +31,7 @@
             </a>
             <a href="../html/notice_writing.html" class="menu">   
                 <div>  
-                    <img src="../img/Board.png" class="menu_img">
+                    <img src="../img/pen-to-square.png" class="menu_img">
                     <span class="menu_text">글작성</span>
                 </div> 
             </a>
@@ -63,6 +65,7 @@
     </header>
     <hr>
     <main>
+        <button onclick="getTimeTable('2', '4')">정보 불러오기</button>
         <table>
             <tr>
                 <th></th>
@@ -178,7 +181,7 @@
     </main>
     <hr>
     <footer>
-        <img src="../img/logo.png" id="footer_img">
+        <img src="../img/js_logo.png" id="footer_img">
         <div id="footer_text">
             <p><a href="">작성자저작권정보</a> | <a href="https://www.instagram.com/js_mirim/">JS인스타공개</a> | <a href="">학교정보공개</a></p>
             <div>

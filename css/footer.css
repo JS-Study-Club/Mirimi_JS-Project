@@ -1,0 +1,65 @@
+#ampm{
+    font-size: 1.5vw;
+    font-weight: 700;
+}
+#time{
+    font-size: 3.3vw;
+    font-weight: 700;
+}
+#beige_box{
+    display: flex;
+    column-gap: 3vw;    
+}
+#class_table, #board{
+    width: 17vw;
+    height: 9vw;
+    border-radius: 10px;
+    background: #FFE5A3;
+    display: flex;
+}
+#beige_box div{
+    column-gap: 2vw;
+}
+#beige_box img{
+    width: 4vw;
+    height: 4vw;
+}
+#class_table, #board{
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-family: "Noto Sans KR";
+    font-size: 1.2vw;
+    font-weight: 700;
+    
+}
+
+footer{
+    display: flex;
+    gap: 2vw;
+    font-family: "Noto Nastaliq Urdu";
+    color: #929292;
+}  
+#footer_img{
+    margin-top: 0.5vw;
+    margin-left: 8vw;
+    width: 7vw;
+    height: 7vw;
+}  
+footer a{
+    color: #000;
+    font-weight: 700;
+}
+
+#footer_text > p {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+footer hr{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+#information > p {
+    margin-bottom: 1vw;
+}

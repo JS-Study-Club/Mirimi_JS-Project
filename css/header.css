@@ -18,7 +18,7 @@ hr{
 
 #info{
     width: 12.5vw;
-    height: 6vh;
+    height: 3.2vw;
     border: 1px solid;
     background-color: #fff;
     gap: 1vw;
@@ -26,6 +26,11 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#account_cir > img {
+    width: 2vw;
+    height: 2vw;
 }
 
 #account_cir{
@@ -46,9 +51,9 @@ hr{
 }
 
 .menu{
-    margin-bottom: -50vw;
+    padding-top: 1vw;
     width: 9vw;
-    height: 6vh;
+    height: 2.2vw;
     border: 1px solid #000000;
     background-color: #ffffff;
     display: flex;
@@ -57,10 +62,10 @@ hr{
 } 
 .menu_img{
     width: 2vw;
-    height: 2vw;
 }
-#menu_text{
-    text-align: center;
+.menu_text{
+    line-height: 3.2vw;
+    font-size: 1vw;
 }
 
 #me{
@@ -78,7 +83,18 @@ hr{
     justify-items: center;
     align-content: center;
 }
-/* #mypage_img{
+
+#mypage_img > img{
+    width: 2.5vw;
+    height: 2.5vw;
     justify-content: center;
     align-content: center;
-} */
+}
+
+#dateInput {
+    padding-left: 1vw;
+    padding-bottom: 0.2vw;
+    font-size: 1.6em;
+    color: #515151;
+    font-family: Noto Sans KR;
+}

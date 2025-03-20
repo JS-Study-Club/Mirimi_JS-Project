@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <script src="../js/food_script.js"></script>
     <script src="../js/background.js"></script>
+    <script src="../js/current_time.js"></script>
 </head>
+
 <body>
     <header>
         <div id="moon"></div>
@@ -22,30 +26,30 @@
                 <div>
                     <img src="../img/School.png" class="menu_img">
                     <span class="menu_text">시간표</span>
-                </div>   
-            </a>  
-            <a href="" class="menu"> 
+                </div>
+            </a>
+            <a href="" class="menu">
                 <div>
                     <img src="../img/Board.png" class="menu_img">
                     <span class="menu_text">게시판</span>
-                </div> 
+                </div>
             </a>
-            <a href="../html/notice_writing.html" class="menu">   
-                <div>  
-                    <img src="../img/Board.png" class="menu_img">
-                    <span class="menu_text">글작성</span>
-                </div> 
+            <a href="../html/notice_writing.html" class="menu">
+                <div>
+                    <img src="../img/pen-to-square.png" class="menu_img">
+                    <span class="menu_text">글 작성</span>
+                </div>
             </a>
             <a href="index.html" class="menu">
                 <div>
                     <img src="../img/Rice.png" id="menu_img">
                     <span class="menu_text">급식표</span>
                 </div>
-            </a>    
+            </a>
         </div>
         <div id="date">
             <div class="choice-date">
-                <input type="date" id="dateInput" >
+                <input type="date" id="dateInput">
                 <script>
                     date = new Date();
                     document.getElementById('dateInput').valueAsDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
@@ -78,17 +82,17 @@
                 var button = document.getElementsByClassName("button");
                 function handleClick(event) {
 
-                if (event.target.classList[1] === "clicked") {
-                    event.target.classList.remove("clicked");
-                } 
-                else {
-                    for (var i = 0; i < button.length; i++) {
-                        button[i].classList.remove("clicked");
-                        button[i].classList.add("non_clicked")
+                    if (event.target.classList[1] === "clicked") {
+                        event.target.classList.remove("clicked");
                     }
+                    else {
+                        for (var i = 0; i < button.length; i++) {
+                            button[i].classList.remove("clicked");
+                            button[i].classList.add("non_clicked")
+                        }
 
-                    event.target.classList.remove("non_clicked");
-                    event.target.classList.add("clicked");
+                        event.target.classList.remove("non_clicked");
+                        event.target.classList.add("clicked");
                     }
                 }
 
@@ -101,20 +105,21 @@
             </script>
         </div>
     </aside>
-    
+
     <main>
         <div class="school-meals-container">
             <div class="school-meals">
                 <p class="meals_head">조식</p>
-                <ul id="breakfastMenu"></ul>
-            </div>
-            <div class="school-meals">
-                <p class="meals_head">석식</p>
-                <ul id="lunchMenu"></ul>
+                <ul class="menuList" id="breakfastMenu"></ul>
             </div>
             <div class="school-meals">
                 <p class="meals_head">중식</p>
-                <ul id="dinnerMenu"></ul>
+                <ul class="menuList" id="lunchMenu"></ul>
+                <p id="current_time_text" ></p>
+            </div>
+            <div class="school-meals">
+                <p class="meals_head">석식</p>
+                <ul class="menuList" id="dinnerMenu"></ul>
             </div>
         </div>
     </main>
@@ -124,33 +129,24 @@
             <span id="date2"></span>
             <div id="time_box">
                 <span id="ampm"></span>
-                <span id="time"></span>  
+                <span id="time"></span>
             </div>
         </div>
 
         <script>
-            function current_time(){
-                const noww = new Date();
-                const hours = noww.getHours();
-                const minutes = String(noww.getMinutes()).padStart(2, "0"); //0을 붙여서 두 자릿수 유지
-
-                document.getElementById("date2").innerText = `${noww.getFullYear()}.${noww.getMonth() + 1}.${noww.getDate()}`;
-                document.getElementById("ampm").innerText = hours >= 12 ? "오후" : "오전";
-                document.getElementById("time").innerText = `${String(hours % 12 || 12).padStart(2, "0")}:${minutes}`;
-            }
             // 1초마다 업데이트
             setInterval(current_time, 1000);
             current_time();
         </script>
 
         <div id="beige_box">
-            <a href="">
+            <a href="timetable.html">
                 <div id="class_table">
                     <div><img src="../img/School.png"></div>
                     <div><span>
-                        우리반 <br>
-                        시간표 보기
-                    </span></div>
+                            우리반 <br>
+                            시간표 보기
+                        </span></div>
                 </div>
             </a>
 
@@ -158,56 +154,56 @@
                 <div id="board">
                     <div><img src="../img/Board.png"></div>
                     <div><span>
-                        우리학교 도움 <br>
-                        요청 게시판 보기
-                    </span></div>
+                            우리학교 도움 <br>
+                            요청 게시판 보기
+                        </span></div>
                 </div>
             </a>
         </div>
     </div>
-</main>
-<hr>
-<footer>
-    <img src="../img/logo.png" id="footer_img">
-    <div id="footer_text">
-        <p><a href="">작성자저작권정보</a> | <a href="https://www.instagram.com/js_mirim/">JS인스타공개</a> | <a href="">학교정보공개</a></p>
-        <div>
-            <p>서울시  관악구 호람로 546 (신림동)  미림마이스터고등학교  JS 스터디 커뮤니티 센터</p>
-            <p>JS 부장   s2455@e-mirim.hs.kr | JS 부부장   s2455@e-mirim.hs.kr | 디자인팀  김설애 | 개발팀  김민재 / 곽자경 / 윤시웅 / 이서영</p>
-            <p>546 Hoam-ro, Gwanak-gu, Seoul, 08821 Korea | MIRIM MEISTER SCHOOL  JS STUDY</p>
+    </main>
+    <hr>
+    <footer>
+        <img src="../img/js_logo.png" id="footer_img">
+        <div id="footer_text">
+            <p><a href="">작성자저작권정보</a> | <a href="https://www.instagram.com/js_mirim/">JS인스타공개</a> | <a
+                    href="https://www.e-mirim">학교정보공개</a></p>
+            <div id="information">
+                <p>서울시 관악구 호람로 546 (신림동) 미림마이스터고등학교 JS 스터디 커뮤니티 센터</p>
+                <p>JS 부장 s2455@e-mirim.hs.kr | JS 부부장 s2455@e-mirim.hs.kr | 디자인팀 김설애 | 개발팀 김민재 / 곽자경 / 윤시웅 / 이서영</p>
+                <p>546 Hoam-ro, Gwanak-gu, Seoul, 08821 Korea | MIRIM MEISTER SCHOOL JS STUDY</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<script>
-    function MealDays(day) {
-        now = new Date();
-        // console.log(day);
-        if (day === 1) {
-            var tomorrow = new Date(now.setDate(now.getDate() + 1));
-            year = tomorrow.getFullYear();
-            month = tomorrow.getMonth()+1;
-            date = tomorrow.getDate();
+    <script>
+        function MealDays(day) {
+            now = new Date();
+            // console.log(day);
+            if (day === 1) {
+                var tomorrow = new Date(now.setDate(now.getDate() + 1));
+                year = tomorrow.getFullYear();
+                month = tomorrow.getMonth() + 1;
+                date = tomorrow.getDate();
+            }
+
+            else if (day === -1) {
+                var tomorrow = new Date(now.setDate(now.getDate() - 1));
+                year = tomorrow.getFullYear();
+                month = tomorrow.getMonth() + 1;
+                date = tomorrow.getDate();
+            }
+
+            else {
+                var tomorrow = new Date(now.setDate(now.getDate()));
+                year = tomorrow.getFullYear();
+                month = tomorrow.getMonth() + 1;
+                date = tomorrow.getDate();
+            }
+            getMealInfo(`${year}${month >= 10 ? month : '0' + month}${date >= 10 ? date : '0' + date}`);
         }
-
-        else if (day === -1) {
-            var tomorrow = new Date(now.setDate(now.getDate() - 1));
-            year = tomorrow.getFullYear();
-            month = tomorrow.getMonth()+1;
-            date = tomorrow.getDate();
-        }
-
-        else {
-            var tomorrow = new Date(now.setDate(now.getDate()));
-            year = tomorrow.getFullYear();
-            month = tomorrow.getMonth()+1;
-            date = tomorrow.getDate();
-        }
-        getMealInfo(`${year}${month >= 10 ? month : '0' + month}${date >= 10 ? date : '0' + date}`);
-    }
-
-    
-    background(); // 페이지 로드 시 실행
-</script>
+        background(); // 페이지 로드 시 실행
+    </script>
 </body>
+
 </html>
