@@ -58,11 +58,6 @@
             <div class="input-date">
                 <button type="button">
                     <img src="../img/Find.png" onclick="toInfo()" class="button-img">
-                    <script>
-                        function toInfo() {
-                            getMealInfo(document.getElementById("dateInput").value.toString().replace(/-/g, ''));
-                        }
-                    </script>
                 </button>
             </div>
         </div>
@@ -75,9 +70,9 @@
     <hr>
     <aside>
         <div class="button-container">
-            <a href="#yesterday" class="button" onclick="MealDays(-1)">어제</a>
-            <a href="#today" class="button" onclick="MealDays(0)">오늘</a>
-            <a href="#tomorrow" class="button" onclick="MealDays(1)">내일</a>
+            <a href="#yesterday" class="button" onclick="nearbyToday(-1)">어제</a>
+            <a href="#today" class="button" onclick="nearbyToday(0)">오늘</a>
+            <a href="#tomorrow" class="button" onclick="nearbyToday(1)">내일</a>
             <script>
                 var button = document.getElementsByClassName("button");
                 function handleClick(event) {
@@ -115,7 +110,7 @@
             <div class="school-meals">
                 <p class="meals_head">중식</p>
                 <ul class="menuList" id="lunchMenu"></ul>
-                <p id="current_time_text" ></p>
+                <p id="current_time_text"></p>
             </div>
             <div class="school-meals">
                 <p class="meals_head">석식</p>
@@ -134,9 +129,7 @@
         </div>
 
         <script>
-            // 1초마다 업데이트
-            setInterval(current_time, 1000);
-            current_time();
+
         </script>
 
         <div id="beige_box">
@@ -177,32 +170,25 @@
     </footer>
 
     <script>
-        function MealDays(day) {
+        setInterval(current_time, 1000);
+        current_time();
+
+        function nearbyToday(day) {
             now = new Date();
-            // console.log(day);
-            if (day === 1) {
-                var tomorrow = new Date(now.setDate(now.getDate() + 1));
-                year = tomorrow.getFullYear();
-                month = tomorrow.getMonth() + 1;
-                date = tomorrow.getDate();
-            }
-
-            else if (day === -1) {
-                var tomorrow = new Date(now.setDate(now.getDate() - 1));
-                year = tomorrow.getFullYear();
-                month = tomorrow.getMonth() + 1;
-                date = tomorrow.getDate();
-            }
-
-            else {
-                var tomorrow = new Date(now.setDate(now.getDate()));
-                year = tomorrow.getFullYear();
-                month = tomorrow.getMonth() + 1;
-                date = tomorrow.getDate();
-            }
+            date = new Date(now.setDate(now.getDate() + day));
+            year = date.getFullYear();
+            month = date.getMonth() + 1;
+            date = date.getDate();
             getMealInfo(`${year}${month >= 10 ? month : '0' + month}${date >= 10 ? date : '0' + date}`);
         }
+
+        function toInfo() {
+            getMealInfo(document.getElementById("dateInput").value.toString().replace(/-/g, ''));
+        }
+
         background(); // 페이지 로드 시 실행
+
+
     </script>
 </body>
 

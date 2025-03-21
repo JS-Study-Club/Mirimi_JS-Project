@@ -66,8 +66,8 @@ aside {
 
 .button {
     margin-bottom: 1.6vw;
-    border: solid 2;
-    border-width: 0.2vw;
+    border: #333333 solid;
+    border-width: 0.1vw;
     border-radius: 8px;
     background-color: white;
     text-align: center;
