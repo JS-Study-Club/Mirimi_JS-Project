@@ -13,15 +13,31 @@ body {
 }
 
 
-table{
-    border: 1px solid;
-    width: 40vw;
-    height: 68vh;
+#timeTable {
     margin: auto;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
     background-color: #fff;
+    margin-top: 2vw;
+    margin-bottom: 4vw; 
     text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+td, th {
+    border: 0.12vw solid black;
+    padding: 0px;
+}
+
+th {
+    font-size: 1.5vw;
+    width: 4vw;
+    height: 4vw;
+}
+
+td {
+    padding: 0.2vw;
+    width: 9vw;
+    height: 4.5vw;
 }
 #rec{
     width: 86vw;
