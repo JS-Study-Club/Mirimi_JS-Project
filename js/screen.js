@@ -1,3 +1,4 @@
+
 function background(){
     let now = new Date().getHours();
     console.log(now);
@@ -16,8 +17,9 @@ function background(){
         document.body.style.background = "linear-gradient(to bottom, #223056, #FFFFFF)";
         time_box.style.backgroundColor = "#2C4982";
         time_box.style.color = "#ffffff"
-        img.src = "../img/night.png";
+        img.src = "../img/moon.png";
     }
     document.body.style.backgroundAttachment = "fixed";
     imageContainer.appendChild(img);
 }
+

@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <script src="../js/food_script.js"></script>
-    <script src="../js/background.js"></script>
+    <script src="../js/screen.js"></script>
     <script src="../js/current_time.js"></script>
+    <script src="../php/user_data.php"></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
         <div id="moon"></div>
         <div id="info">
             <span id="account_cir"><img src="../img/eva_person-outline.png"></span>
-            <span id="stu_id">0학년 0반 김00</span>
+            <span id="stu_id"></span>
         </div>
         <div id="me">
             <a href="timetable.html" class="menu">
@@ -61,7 +62,7 @@
                 </button>
             </div>
         </div>
-        <a href="" id="mypage_icon">
+        <a href="../php/login.php" id="mypage_icon">
             <div id="mypage_img">
                 <img src="../img/eva_person-outline.png">
             </div>
@@ -73,9 +74,6 @@
             <a href="#yesterday" class="button" onclick="nearbyToday(-1)">어제</a>
             <a href="#today" class="button" onclick="nearbyToday(0)">오늘</a>
             <a href="#tomorrow" class="button" onclick="nearbyToday(1)">내일</a>
-            <script>
-
-            </script>
         </div>
     </aside>
 
@@ -161,6 +159,7 @@
         }
 
         background(); // 페이지 로드 시 실행
+        // setStuID();
 
         init();
     </script>
