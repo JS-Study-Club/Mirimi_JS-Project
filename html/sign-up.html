@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mirimi - 로그인</title>
+    <link rel="stylesheet" href="../css/login-style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"
+    />
 </head>
 <body>
-    
+    <div id="total-screen">
+        <img src="../img/js-logo.png" alt="js-logo" id="top-js-logo">
+        <div id="input-set">
+            <div id="form-set">
+                <form action=".php" method="post" class="form">
+                    <div class="input-container">
+                        <input class="input-box" type="text" maxlength="15" required placeholder=" " id="user-id">
+                        <label for="user-id" class="signin-label">ID</label>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-box" type="password" maxlength="15" required placeholder=" " id="password">
+                        <label for="password" class="signin-label">비밀번호</label>
+                    </div>
+                    <button id="login-button"><p class="login-text">로그인</p></button>
+                </form>
+            </div>
+        </div>
+        <div>
+            <button id="go-back" class="else-button">뒤로가기</button> | 
+            <button class="else-button">회원가입</button>
+        </div>
+    </div>
 </body>
 </html>
