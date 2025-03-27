@@ -6,6 +6,7 @@
 
 ## 개발 언어
 - HTML + CSS + JS
+- PHP
 - MySQL
 
 ## API
