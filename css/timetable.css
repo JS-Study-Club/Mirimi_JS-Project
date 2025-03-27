@@ -1,8 +1,10 @@
 @import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
-*{
+
+* {
     text-decoration: none;
 }
-html{
+
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -17,130 +19,55 @@ body {
     margin: auto;
     background-color: #fff;
     margin-top: 2vw;
-    margin-bottom: 4vw; 
+    margin-bottom: 2vw;
     text-align: center;
+    
     border-collapse: collapse;
     border-spacing: 0px;
 }
 
 td, th {
     border: 0.12vw solid black;
+    vertical-align: middle;
     padding: 0px;
+    
 }
 
 th {
-    font-size: 1.5vw;
+    font-size: 1.6vw;
     width: 4vw;
     height: 4vw;
 }
 
 td {
+    font-size: 1.2vw;
     padding: 0.2vw;
-    width: 9vw;
+    width: 10vw;
     height: 4.5vw;
 }
-#rec{
-    width: 86vw;
-    height: 16vw;
-    border-radius: 1vw;
-    border: 5px solid #2475D6;
-    background-color: #fff;
-    margin: auto;
-    margin-bottom: 5vw;
-    display: flex;
-    column-gap: 20vw;
-    align-items: center;
-    justify-content: center;
-}
-#blue_box{
-    width: 20vw;
-    height: 24.2vh;
+
+.setInfo {
     border-radius: 10px;
-    color: #7ABFFF;
+    width: 20vw;
+    height: 4vw;
+    background-color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-}
-#date {
-    margin-right: -5vw;
-}
-input {
-    height: 2.8vw;
-    width: 18vw;
-    border-radius: 15px;
-}
-.input-date {
-    margin-top: -3vw;
-    margin-left: 14.5vw;
-}
-.input-date > button {
-    margin-left: 0.4vw;
-    margin-top: 0.6vw;
-    background-color: rgba(0, 0, 0, 0);
-    border: 0;
-}
-.button-img {
-    width: 1.5vw;
-    height: 1.5vw;
-}
-
-.time_box {
-    display: flex;
-    align-items: center; /* 오전/오후와 시간 수직 정렬 */
-    gap: 5px; /* 오전/오후와 시간 사이 여백 */
-}
-#ampm{
-    font-size: 1.5vw;
-    font-weight: 700;
-}
-#time{
-    font-size: 3.3vw;
-    font-weight: 700;
-}
-#beige_box{
-    display: flex;
-    column-gap: 3vw;    
-}
-#class_table, #board{
-    width: 17vw;
-    height: 9vw;
-    border-radius: 10px;
-    background: #FFE5A3;
-    display: flex;
-}
-#beige_box div{
-    column-gap: 2vw;
-}
-#beige_box img{
-    width: 4vw;
-    height: 4vw;
-}
-#class_table, #board{
-    align-items: center;
     justify-content: center;
-    color: #000;
-    font-family: "Noto Sans KR";
-    font-size: 1.2vw;
-    font-weight: 700;
-    
+    margin: auto;
+    margin-bottom: 2vw;
 }
 
-footer{
-    display: flex;
-    gap: 2vw;
-    font-family: "Noto Nastaliq Urdu";
-    color: #929292;
-}  
-#footer_img{
-    width: 9vw;
-    height: 9vw;
-}  
-footer a{
-    color: #000;
-    font-weight: 700;
+#from {
+    margin-right: 1vw;
 }
-footer hr{
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+#infoSubmit {
+    width: 5vw;
+    border-color: #fff;
+}
+
+#class {
+    margin-left: 0.5vw;
 }

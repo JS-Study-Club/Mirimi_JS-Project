@@ -1,22 +1,42 @@
-header{
+header {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
     margin-bottom: 1.5vw;
 }
-header span{
+
+header span {
     color: #000;
 }
-hr{
+
+hr {
     color: #515151;
 }
-/* #sun{
-    width: 4vw;
-    height: 4vw;
-    margin-left: -2vw;
-} */
 
-#info{
+input {
+    height: 2.8vw;
+    width: 18vw;
+    border-radius: 15px;
+}
+
+.input-date {
+    margin-top: -3vw;
+    margin-left: 14.5vw;
+}
+
+.input-date>button {
+    margin-left: 0.4vw;
+    margin-top: 0.6vw;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+}
+
+.button-img {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+#info {
     width: 12.5vw;
     height: 3.2vw;
     border: 1px solid;
@@ -28,12 +48,12 @@ hr{
     align-items: center;
 }
 
-#account_cir > img {
+#account_cir>img {
     width: 2vw;
     height: 2vw;
 }
 
-#account_cir{
+#account_cir {
     background-color: #D9D9D9;
     width: 2.5vw;
     height: 2.5vw;
@@ -43,14 +63,15 @@ hr{
     align-content: center;
     margin-left: -1vw;
 }
-#stu_id{
+
+#stu_id {
     text-align: center;
     font-family: Noto Sans KR;
     font-size: 1vw;
     font-weight: 400;
 }
 
-.menu{
+.menu {
     padding-top: 1vw;
     width: 9vw;
     height: 2.2vw;
@@ -59,20 +80,23 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-} 
-.menu_img{
+}
+
+.menu_img {
     width: 2vw;
 }
-.menu_text{
+
+.menu_text {
     line-height: 3.2vw;
     font-size: 1vw;
 }
 
-#me{
+#me {
     display: flex;
     font-weight: 700;
 }
-#mypage_icon{
+
+#mypage_icon {
     width: 3vw;
     height: 3vw;
     background-color: #fff;
@@ -84,7 +108,7 @@ hr{
     align-content: center;
 }
 
-#mypage_img > img{
+#mypage_img>img {
     width: 2.5vw;
     height: 2.5vw;
     justify-content: center;

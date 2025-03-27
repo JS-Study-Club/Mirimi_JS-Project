@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>시간표 페이지</title>
+    <title>Mirimi - 시간표</title>
+    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/timetable.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -41,7 +42,7 @@
             </a>
             <a href="index.html" class="menu">
                 <div>
-                    <img src="../img/Rice.png" id="menu_img">
+                    <img src="../img/Rice.png" class="menu_img">
                     <span class="menu_text">급식표</span>
                 </div>
             </a>
@@ -69,17 +70,30 @@
     </header>
     <hr>
     <main>
-        <button onclick="getTimeTable('2', '4')">정보 불러오기</button>
-        <table id = "timeTable">
-            <tr>
-                <th></th>
-                <th id = "mon">월</th>
-                <th id = "tues">화</th>
-                <th id = "wednes">수</th>
-                <th id = "thurs">목</th>
-                <th id = "fri">금</th>
-            </tr>
-        </table>
+        <table id="timeTable"></table>
+        <div class="setInfo">
+            <form id="form" action="">
+                <select id="grade">
+                    <option name="grade" value="1">1</option>
+                    <option name="grade" value="2">2</option>
+                    <option name="grade" value="3">3</option>
+                </select>
+                학년
+                <select id="class">
+                    <option name="class" value="1">1</option>
+                    <option name="class" value="2">2</option>
+                    <option name="class" value="3">3</option>
+                    <option name="class" value="4">4</option>
+                    <option name="class" value="5">5</option>
+                    <option name="class" value="6">6</option>
+                </select>
+                반
+                <button type="button" id="infoSubmit" onclick="getInfo()">조회</button>
+
+            </form>
+
+            <!-- <button onclick="getTimeTable()">정보 불러오기</button> -->
+        </div>
         <div id="rec">
             <div id="blue_box">
                 <span id="date2"></span>
@@ -117,8 +131,8 @@
         <img src="../img/js_logo.png" id="footer_img">
         <div id="footer_text">
             <p><a href="">작성자저작권정보</a> | <a href="https://www.instagram.com/js_mirim/">JS인스타공개</a> | <a
-                    href="">학교정보공개</a></p>
-            <div>
+                    href="https://www.e-mirim">학교정보공개</a></p>
+            <div id="information">
                 <p>서울시 관악구 호람로 546 (신림동) 미림마이스터고등학교 JS 스터디 커뮤니티 센터</p>
                 <p>JS 부장 s2455@e-mirim.hs.kr | JS 부부장 s2455@e-mirim.hs.kr | 디자인팀 김설애 | 개발팀 김민재 / 곽자경 / 윤시웅 / 이서영</p>
                 <p>546 Hoam-ro, Gwanak-gu, Seoul, 08821 Korea | MIRIM MEISTER SCHOOL JS STUDY</p>
@@ -127,10 +141,13 @@
     </footer>
 
     <script>
+
         setInterval(current_time, 1000);
         current_time();
 
         background(); // 페이지 로드 시 실행
+
+        
     </script>
 </body>
 
