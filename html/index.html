@@ -34,7 +34,7 @@
                     <span class="menu_text">게시판</span>
                 </div>
             </a>
-            <a href="../html/notice_writing.html" class="menu">
+            <a href="notice_writing.html" class="menu">
                 <div>
                     <img src="../img/pen-to-square.png" class="menu_img">
                     <span class="menu_text">글 작성</span>
@@ -42,7 +42,7 @@
             </a>
             <a href="index.html" class="menu">
                 <div>
-                    <img src="../img/Rice.png" id="menu_img">
+                    <img src="../img/Rice.png" class="menu_img">
                     <span class="menu_text">급식표</span>
                 </div>
             </a>
@@ -74,29 +74,7 @@
             <a href="#today" class="button" onclick="nearbyToday(0)">오늘</a>
             <a href="#tomorrow" class="button" onclick="nearbyToday(1)">내일</a>
             <script>
-                var button = document.getElementsByClassName("button");
-                function handleClick(event) {
 
-                    if (event.target.classList[1] === "clicked") {
-                        event.target.classList.remove("clicked");
-                    }
-                    else {
-                        for (var i = 0; i < button.length; i++) {
-                            button[i].classList.remove("clicked");
-                            button[i].classList.add("non_clicked")
-                        }
-
-                        event.target.classList.remove("non_clicked");
-                        event.target.classList.add("clicked");
-                    }
-                }
-
-                function init() {
-                    for (var i = 0; i < button.length; i++) {
-                        button[i].addEventListener("click", handleClick);
-                    }
-                }
-                init();
             </script>
         </div>
     </aside>
@@ -127,10 +105,6 @@
                 <span id="time"></span>
             </div>
         </div>
-
-        <script>
-
-        </script>
 
         <div id="beige_box">
             <a href="timetable.html">
@@ -188,7 +162,7 @@
 
         background(); // 페이지 로드 시 실행
 
-
+        init();
     </script>
 </body>
 

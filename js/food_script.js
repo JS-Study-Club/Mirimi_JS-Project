@@ -79,3 +79,26 @@ function timeDesign(dateData) {
   var str_day = str_date.substring(6, 8);
   return `${str_year}년 ${str_month}월 ${str_day}일`;
 }
+
+var button = document.getElementsByClassName("button");
+function handleClick(event) {
+
+  if (event.target.classList[1] === "clicked") {
+    event.target.classList.remove("clicked");
+  }
+  else {
+    for (var i = 0; i < button.length; i++) {
+      button[i].classList.remove("clicked");
+      button[i].classList.add("non_clicked")
+    }
+
+    event.target.classList.remove("non_clicked");
+    event.target.classList.add("clicked");
+  }
+}
+
+function init() {
+  for (var i = 0; i < button.length; i++) {
+    button[i].addEventListener("click", handleClick);
+  }
+}

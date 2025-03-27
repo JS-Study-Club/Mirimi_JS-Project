@@ -7,52 +7,13 @@ html{
     padding: 0;
     height: 100%;
 }
-#rec{
-    width: 86vw;
-    height: 16vw;
-    border-radius: 1vw;
-    border: 5px solid #2475D6;
-    background-color: #fff;
-    margin: auto;
-    margin-bottom: 5vw;
-    display: flex;
-    column-gap: 20vw;
-    align-items: center;
-    justify-content: center;
-}
-#blue_box{
-    width: 20vw;
-    height: 14vw;
-    border-radius: 10px;
-    color: #7ABFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+
+
 #date {
     margin-right: -5vw;
 }
-input {
-    height: 2.8vw;
-    width: 18vw;
-    border-radius: 15px;
-}
-.input-date {
-    margin-top: -3vw;
-    margin-left: 14.5vw;
-}
-.input-date > button {
-    margin-left: 0.4vw;
-    margin-top: 0.6vw;
-    background-color: rgba(0, 0, 0, 0);
-    border: 0;
-}
-.button-img {
-    width: 1.5vw;
-    height: 1.5vw;
-}
+
+
 
 aside {
     float: left;
@@ -66,8 +27,7 @@ aside {
 
 .button {
     margin-bottom: 1.6vw;
-    border: #333333 solid;
-    border-width: 0.1vw;
+    box-shadow: 0 0 0 0.1vw #333333 inset;
     border-radius: 8px;
     background-color: white;
     text-align: center;
@@ -83,15 +43,8 @@ aside {
 }
 
 .clicked {
-    border: solid;
-    border-color: #2475D6;
-    border-width: 0.2vw;
-}
-
-.non_clicked {
-    border: solid;
-    border-color: #333333;
-    border-width: 0.1vw;
+    box-shadow: 0 0 0 0.3vw #2475D6 inset;
+    border: none;
 }
 
 main {
@@ -133,6 +86,8 @@ main {
 .menuList > li {
     margin-bottom: 0.5vw;
 }
+
+
 
 #current_time_text {
     position: absolute; bottom: 1vw;

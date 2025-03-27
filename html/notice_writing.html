@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판 글쓰기</title>
-    <link rel="stylesheet" href="../css/timetable.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/notice_writing.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/background.js"></script>
 </head>
+
 <body>
     <header>
         <div id="moon"></div>
         <div id="info">
             <span id="account_cir"><img src="../img/eva_person-outline.png"></span>
-            <span id="stu_id">0학년 0반 김00</span> 
+            <span id="stu_id">0학년 0반 김00</span>
         </div>
         <div id="me">
-            <a href="../html/timetable.html" class="menu">
+            <a href="timetable.html" class="menu">
                 <div>
-                    <img src="../img/Group 5.png" class="menu_img">
+                    <img src="../img/School.png" class="menu_img">
                     <span class="menu_text">시간표</span>
-                </div>   
-            </a>  
-            <a href="" class="menu"> 
-                <div>
-                    <img src="../img/Group 4.png" class="menu_img">
-                    <span class="menu_text">게시판</span>
-                </div> 
-            </a>
-            <a href="../html/notice_writing.html" class="menu">   
-                <div>  
-                    <img src="../img/Group 4.png" class="menu_img">
-                    <span class="menu_text">글작성</span>
-                </div> 
+                </div>
             </a>
             <a href="" class="menu">
                 <div>
-                    <img src="../img/Group 32.png" id="menu_img">
+                    <img src="../img/Board.png" class="menu_img">
+                    <span class="menu_text">게시판</span>
+                </div>
+            </a>
+            <a href="notice_writing.html" class="menu">
+                <div>
+                    <img src="../img/pen-to-square.png" class="menu_img">
+                    <span class="menu_text">글 작성</span>
+                </div>
+            </a>
+            <a href="index.html" class="menu">
+                <div>
+                    <img src="../img/Rice.png" class="menu_img">
                     <span class="menu_text">급식표</span>
                 </div>
-            </a>    
+            </a>
         </div>
         <div id="date">
-            <form action="">
-                <input type="date">
-            </form>
+            <div class="choice-date">
+                <input type="date" id="dateInput">
+                <script>
+                    date = new Date();
+                    document.getElementById('dateInput').valueAsDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+                </script>
+            </div>
+            <div class="input-date">
+                <button type="button">
+                    <img src="../img/Find.png" onclick="toInfo()" class="button-img">
+                </button>
+            </div>
         </div>
         <a href="" id="mypage_icon">
             <div id="mypage_img">
@@ -58,16 +72,16 @@
             <button type="submit" onclick="alert('작성완료!')">등록</button>
             <button id="delete">삭제</button>
         </div>
-        
+
         <script>
-            document.getElementById("delete").addEventListener("click", function(){
-                if(confirm("정말 삭제하시겠습니까?")){
-                    fetch("/delete-post", {method:"POST"}) //fetch(): 서버와 통신하는 기능을 제공하는 함수. /delete-post: 삭제요청을 보낼 서버의 주소. method: "POST": http 요청방식
-                    .then(()=>{
-                        alert("삭제되었습니다.");
-                        location.href = "#" //게시판 목록으로 이동
-                    })
-                    .catch(()=> alert("삭제 실패"));
+            document.getElementById("delete").addEventListener("click", function () {
+                if (confirm("정말 삭제하시겠습니까?")) {
+                    fetch("/delete-post", { method: "POST" }) //fetch(): 서버와 통신하는 기능을 제공하는 함수. /delete-post: 삭제요청을 보낼 서버의 주소. method: "POST": http 요청방식
+                        .then(() => {
+                            alert("삭제되었습니다.");
+                            location.href = "#" //게시판 목록으로 이동
+                        })
+                        .catch(() => alert("삭제 실패"));
                 }
             });
         </script>
@@ -76,90 +90,58 @@
             <input type="text" placeholder="제목을 입력하세요." name="title"> <br>
             <textarea placeholder="내용을 입력하세요." name="detail"></textarea>
         </div>
-        
-        <div id="rec">
-            <div id="blue_box">
-                <span id="date2"></span>
-                <div id="time_box">
-                    <span id="ampm"></span>
-                    <span id="time"></span>  
-                </div>
+    </main>
+
+    <div id="rec">
+        <div id="blue_box">
+            <span id="date2"></span>
+            <div id="time_box">
+                <span id="ampm"></span>
+                <span id="time"></span>
             </div>
+        </div>
 
-            <script>
-                function current_time(){
-                    const now = new Date();
-                    const hours = now.getHours();
-                    const minutes = String(now.getMinutes()).padStart(2, "0"); //0을 붙여서 두 자릿수 유지
-
-                    document.getElementById("date2").innerText = `${now.getFullYear()}.${now.getMonth() + 1}.${now.getDate()}`;
-
-                    document.getElementById("ampm").innerText = hours >= 12 ? "오후" : "오전";
-                    document.getElementById("time").innerText = `${String(hours % 12 || 12).padStart(2, "0")}:${minutes}`;
-                }
-                // 1초마다 업데이트
-                setInterval(current_time, 1000);
-                current_time();
-            </script>
-
-            <div id="beige_box">
-                <a href="">
-                    <div id="class_table">
-                        <div><img src="../img/Group 5.png"></div>
-                        <div><span>
+        <div id="beige_box">
+            <a href="timetable.html">
+                <div id="class_table">
+                    <div><img src="../img/School.png"></div>
+                    <div><span>
                             우리반 <br>
                             시간표 보기
                         </span></div>
-                    </div>
-                </a>
+                </div>
+            </a>
 
-                <a href="">
-                    <div id="board">
-                        <div><img src="../img/Group 4.png"></div>
-                        <div><span>
+            <a href="">
+                <div id="board">
+                    <div><img src="../img/Board.png"></div>
+                    <div><span>
                             우리학교 도움 <br>
                             요청 게시판 보기
                         </span></div>
-                    </div>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
+    </div>
     </main>
     <hr>
     <footer>
-        <img src="../img/logo.png" id="footer_img">
+        <img src="../img/js_logo.png" id="footer_img">
         <div id="footer_text">
-            <p><a href="">작성자저작권정보</a> | <a href="https://www.instagram.com/js_mirim/">JS인스타공개</a> | <a href="">학교정보공개</a></p>
-            <div>
-                <p>서울시  관악구 호람로 546 (신림동)  미림마이스터고등학교  JS 스터디 커뮤니티 센터</p>
-                <p>JS 부장   s2455@e-mirim.hs.kr | JS 부부장   s2455@e-mirim.hs.kr | 디자인팀  김설애 | 개발팀  김민재 / 곽자경 / 윤시웅 / 이서영</p>
-                <p>546 Hoam-ro, Gwanak-gu, Seoul, 08821 Korea | MIRIM MEISTER SCHOOL  JS STUDY</p>
+            <p><a href="">작성자저작권정보</a> | <a href="https://www.instagram.com/js_mirim/">JS인스타공개</a> | <a
+                    href="https://www.e-mirim">학교정보공개</a></p>
+            <div id="information">
+                <p>서울시 관악구 호람로 546 (신림동) 미림마이스터고등학교 JS 스터디 커뮤니티 센터</p>
+                <p>JS 부장 s2455@e-mirim.hs.kr | JS 부부장 s2455@e-mirim.hs.kr | 디자인팀 김설애 | 개발팀 김민재 / 곽자경 / 윤시웅 / 이서영</p>
+                <p>546 Hoam-ro, Gwanak-gu, Seoul, 08821 Korea | MIRIM MEISTER SCHOOL JS STUDY</p>
             </div>
         </div>
     </footer>
 
     <script>
-        function background(){
-            let now = new Date().getHours();
-            console.log(now);
-            let imageContainer = document.getElementById("moon");
-            let img = document.createElement("img");
-            img.style.width = "4vw";
-
-            if(now >= 6 && now < 18){
-                document.body.style.background = "linear-gradient(to bottom, rgba(168, 251, 255, 0.48), #FFFFFF)";
-                img.src = "../img/Vector.png";
-            } else{
-                document.body.style.background = "linear-gradient(to bottom, #223056, #FFFFFF)";
-		        let box = document.getElementById("blue_box");
-                box.style.backgroundColor = "#2C4982";
-                img.src = "../img/moon.png";
-            }
-            document.body.style.backgroundAttachment = "fixed";
-            imageContainer.appendChild(img);
-        }
         background(); // 페이지 로드 시 실행
         setInterval(background, 60000); // 1분마다 업데이트
     </script>
 </body>
+
 </html>

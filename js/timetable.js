@@ -19,19 +19,18 @@ function getTimeTable(grade, class_nm) {
         const IDTable = document.getElementById("timeTable");
 
         if (dayCount > 4) {
-            // IDTable.innerHTML = "";
-            // let headerRow = "";
-            // IDTable.innerHTML += headerRow;
-            //html로 함
+            IDTable.innerHTML = "";
+            let headerRow = `<tr><th></th><th id = "mon">월</th><th id = "tues">화</th><th id = "wednes">수</th><th id = "thurs">목</th><th id = "fri">금</th></tr>`;
+            IDTable.innerHTML += headerRow;
 
             // 시간표 내용 채우기 (가로 방향)
             for (let col = 0; col < 7; col++) {
                 let rowHTML = `<tr><th>${col + 1}</th>`; // 첫 번째 열에 교시 번호 추가
                 for (let row = 0; row < 5; row++) { // 요일별 데이터 추가
                     if (typeof timeTableList[col][row] === 'undefined') {
-                        rowHTML += "<td></td>"; // 빈 칸
+                        rowHTML += "<td></td>";
                     } else {
-                        let subject = timeTableList[col][row].replace(/\*/g, ""); // "*" 제거
+                        let subject = timeTableList[col][row].replace(/\*/g, ""); // * 제거
                         // console.log(subject);
                         rowHTML += `<td>${subject}</td>`;
                     }
@@ -39,18 +38,10 @@ function getTimeTable(grade, class_nm) {
                 rowHTML += "</tr>";
                 IDTable.innerHTML += rowHTML;
             }
-            const weekday = Date.prototype.getDay();
-            console.log(weekday);
-            //if ()
             return; // 금요일까지 요청 완료하면 종료
         }
 
-        console.log(ALL_TI_YMD);
-
         let api_url = `https://open.neis.go.kr/hub/hisTimetable?KEY=${API_KEY}&ATPT_OFCDC_SC_CODE=${ATPT_OFCDC_SC_CODE}&SD_SCHUL_CODE=${SD_SCHUL_CODE}&AY=${AY}&SEM=${SEM}&ALL_TI_YMD=${ALL_TI_YMD}&GRADE=${GRADE}&CLASS_NM=${CLASS_NM}&Type=${TYPE}`;
-
-        var i = 0;
-
         fetch(api_url)
             .then(response => {
                 if (!response.ok) {
@@ -85,8 +76,16 @@ function getTimeTable(grade, class_nm) {
 
     fetchTimetable(0);  // 첫 번째 요청 시작 (월요일)
 
+}
 
-
+function getInfo() {
+    // var s_grade = document.getElementById("grade").value;
+    var g_value = document.getElementById("grade").value;
+    var c_value = document.getElementById("class").value;
+    console.log(g_value);
+    console.log(c_value);
+    getTimeTable(g_value, c_value);
+    
 }
 
 function mondayDate() {
