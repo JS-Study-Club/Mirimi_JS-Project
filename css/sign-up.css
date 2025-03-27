@@ -37,7 +37,6 @@ img {
     color: rgb(142, 142, 142);
     transition: all 0.2s ease-in-out;
     pointer-events: none;
-    /* 클릭 방지 */
 }
 .input-box:focus+.signin-label,
 .input-box:not(:placeholder-shown)+.signin-label {
