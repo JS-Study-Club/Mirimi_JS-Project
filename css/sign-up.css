@@ -69,3 +69,7 @@ img {
     text-decoration-line: none;
     color: black;
 }
+
+#id_check {
+    width: 37vw;
+}

@@ -17,7 +17,8 @@
         echo "<script>
         location.href = \"my-page.php\";
         </script>";
-    } else { ?>
+    } else { 
+    ?>
         <div id="total-screen">
             <img src="../img/js_logo.png" alt="js-logo" id="top-js-logo">
             <div id="input-set">
