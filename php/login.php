@@ -15,7 +15,7 @@
     session_start();
     if (isset($_SESSION['name'])) {
         echo "<script>
-        location.href = \"../html/my-page.html\";
+        location.href = \"my-page.php\";
         </script>";
     } else { ?>
         <div id="total-screen">
@@ -38,7 +38,7 @@
             </div>
             <div>
                 <a onclick="window.history.back()" id="go-back" class="else-button">뒤로가기</a> |
-                <a href="sign-up.html" class="else-button">회원가입</a>
+                <a href="sign-up.php" class="else-button">회원가입</a>
             </div>
         </div>
         <script>

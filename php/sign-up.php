@@ -1,3 +1,7 @@
+<?php
+include "db_conn.php";
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -27,6 +31,7 @@
                     <div class="input-container">
                         <input class="input-box" type="text" maxlength="15" required placeholder=" " id="user-id">
                         <label for="user-id" class="signin-label">ID</label>
+                        <input type="button" id="check_button" value="ID 중복체크" onclick="checkId();">
                     </div>
                     <div class="input-container">
                         <input class="input-box" type="password" maxlength="15" required placeholder=" " id="password">
@@ -37,8 +42,8 @@
             </div>
         </div>
         <div>
-            <a href="index.html" id="go-back" class="else-button">뒤로가기</a> | 
-            <a href="login.html" class="else-button">로그인</a>
+            <a href="index.php" id="go-back" class="else-button">뒤로가기</a> | 
+            <a href="login.php" class="else-button">로그인</a>
         </div>
     </div>
 </body>

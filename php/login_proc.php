@@ -1,30 +1,9 @@
 <?php
 session_start();
-
-// var_dump($_POST);
-// exit;
-
-$host = 'localhost'; // MySQL 호스트
-$username = 'root'; // MySQL 사용자명
-$password = '000000'; // MySQL 비밀번호
-$database = 'js_project'; // 사용할 데이터베이스명
-
-$db_conn = mysqli_connect($host, $username, $password, $database);
-
-if (!$db_conn) {
-    echo "<script> 
-        alert('MySQL 연결 실패');
-        </script>";
-} else {
-    echo "<script> 
-        alert('MySQL 연결 성공');
-        </script>";
-}
-
+include("db_conn.php");
 
 $id = $_POST['user-id'];
 $pw = $_POST['user-pw'];
-
 
 //아이디 존재 여부 검사
 $sql = "select * from mirimi_users where user_id='$id'";
@@ -58,14 +37,12 @@ if (!$row) { // 아이디가 존재하지 않으면 로그인 페이지로
         $_SESSION['grade'] = $row['user_grade'];
         $_SESSION['class'] = $row['user_class'];
         mysqli_close($db_conn);
-        echo "ID " . $id . "<br>";
-        echo "PW " . $pw . "<br>";
-        echo "NAME " . $_SESSION['name'];
-        header("Location: ../html/index.html");
-        $s_name = $_SESSION['name'];
-        echo "<script>
-            name = '$s_name';
-            </script>";
+        
+        header("Location: my-page.php");
+        
+        // echo "<script>
+        //     name = '$s_name';
+        //     </script>";
         exit;
     }
 }

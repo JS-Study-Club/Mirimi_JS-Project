@@ -9,16 +9,17 @@ if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(
       session_name(), '', time() - 42000,
-      $params["id"], $params["name"],
-      $params["grade"], $params["class"]
+      $params["path"], $params["domain"],
+      $params["secure"], $params["httponly"]
     );
   }
 
 // 세션 파일 및 브라우저 쿠키 삭제
 session_destroy();
+unset($_SESSION['name']);
 ?>
 
 <script>
     alert("로그아웃 되었습니다.");
-    location.replace('../html/index.html');
+    location.replace('../php/index.php');
 </script>

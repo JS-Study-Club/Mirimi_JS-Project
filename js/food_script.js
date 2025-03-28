@@ -6,7 +6,7 @@ function getMealInfo(date) {
   const TYPE = "json";
   const dateData = date;
   const api_url = `https://open.neis.go.kr/hub/mealServiceDietInfo?ATPT_OFCDC_SC_CODE=${ATPT_OFCDC_SC_CODE}&SD_SCHUL_CODE=${SD_SCHUL_CODE}&KEY=${API_KEY}&MLSV_YMD=${dateData}&Type=${TYPE}`;
-  // console.log(dateData);
+  console.log(dateData);
 
 
   fetch(api_url)

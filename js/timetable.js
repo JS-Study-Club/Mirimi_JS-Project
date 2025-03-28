@@ -82,8 +82,6 @@ function getInfo() {
     // var s_grade = document.getElementById("grade").value;
     var g_value = document.getElementById("grade").value;
     var c_value = document.getElementById("class").value;
-    console.log(g_value);
-    console.log(c_value);
     getTimeTable(g_value, c_value);
     
 }
