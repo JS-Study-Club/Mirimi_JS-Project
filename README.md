@@ -1,4 +1,4 @@
-# Mirimi_JS-Project<br>
+# Mirimi_JS-Project
 ### 미림마이스터고등학교의 급식과 시간표를 알려주는 웹사이트입니다
 
 ## 기간
@@ -8,6 +8,11 @@
 - HTML + CSS + JS
 - PHP
 - MySQL
+
+## 개발 툴
+- Visual Studio Code
+- Bitnami WAMP Stack
+- MySQL WorkBench
 
 ## API
 - [나이스(Neis) Open API](https://open.neis.go.kr/)
