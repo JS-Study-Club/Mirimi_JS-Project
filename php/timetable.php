@@ -29,11 +29,6 @@ if (isset($_SESSION['name'])) {
 
 <body>
     <header>
-        <script>
-            background();
-            setInterval(current_time, 1000);
-            current_time();
-        </script>
         <div id="moon"></div>
         <div id="info">
             <span id="account_cir"><img src="../img/eva_person-outline.png"></span>
@@ -161,6 +156,11 @@ if (isset($_SESSION['name'])) {
             </div>
         </div>
     </footer>
+    <script>
+            background();
+            setInterval(current_time, 1000);
+            current_time();
+        </script>
 
     <script>
         <?php
