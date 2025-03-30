@@ -23,14 +23,17 @@ if (isset($_SESSION['name'])) {
     <link rel="stylesheet" href="../css/timetable.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <script src="../js/timetable.js"></script>
     <script src="../js/screen.js"></script>
-    <script src="../js/current_time.js"></script>
-    <script src="../php/user_data.php"></script>
+    <script src="../js/timetable.js"></script>
 </head>
 
 <body>
     <header>
+        <script>
+            background();
+            setInterval(current_time, 1000);
+            current_time();
+        </script>
         <div id="moon"></div>
         <div id="info">
             <span id="account_cir"><img src="../img/eva_person-outline.png"></span>
@@ -165,13 +168,6 @@ if (isset($_SESSION['name'])) {
         echo "var s_class = '$user_class';";
         ?>
         getTimeTable(s_grade, s_class);
-        setInterval(current_time, 1000);
-        current_time();
-        
-
-        background(); // 페이지 로드 시 실행
-
-
     </script>
 </body>
 

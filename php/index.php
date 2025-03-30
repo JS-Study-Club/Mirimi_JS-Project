@@ -5,7 +5,7 @@ if (isset($_SESSION['name'])) {
     $user_grade = $_SESSION['grade'];
     $user_class = $_SESSION['class'];
     $user_name = $_SESSION['name'];
-    $my_info = $user_grade.'학년 '.$user_class.'반 '.$user_name;
+    $my_info = $user_grade . '학년 ' . $user_class . '반 ' . $user_name;
 } else {
     $user_name = '로그인 필요';
     $my_info = $user_name;
@@ -25,7 +25,6 @@ if (isset($_SESSION['name'])) {
     <link rel="stylesheet" href="../css/footer.css">
     <script src="../js/food_script.js"></script>
     <script src="../js/screen.js"></script>
-    <script src="../js/current_time.js"></script>
 </head>
 
 <body>
