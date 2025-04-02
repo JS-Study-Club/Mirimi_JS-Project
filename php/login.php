@@ -25,11 +25,11 @@
                 <div id="form-set">
                     <form action="../php/login_proc.php" method="post" class="form" onsubmit="return login_check()">
                         <div class="input-container">
-                            <input class="input-box" type="text" maxlength="20" placeholder=" " id="user-id" name="user-id">
+                            <input class="input-box" type="text" placeholder=" " id="user-id" name="user-id">
                             <label for="user-id" class="signin-label">ID</label>
                         </div>
                         <div class="input-container">
-                            <input class="input-box" type="password" maxlength="20" placeholder=" " id="user-pw"
+                            <input class="input-box" type="password" placeholder=" " id="user-pw"
                                 name="user-pw">
                             <label for="user-pw" class="signin-label">PW</label>
                         </div>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div>
-                <a onclick="window.history.back()" id="go-back" class="else-button">뒤로가기</a> |
+                <a onclick="window.history.back()" id="go-back" class="else-button">돌아가기</a> |
                 <a href="sign-up.php" class="else-button">회원가입</a>
             </div>
         </div>

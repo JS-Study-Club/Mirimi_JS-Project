@@ -32,7 +32,7 @@ img {
 .signin-label {
     position: absolute;
     top: 50%;
-    left: 30px;
+    left: 15px;
     transform: translateY(-50%);
     font-size: 16px;
     color: rgb(142, 142, 142);
@@ -42,8 +42,8 @@ img {
 }
 .input-box:focus+.signin-label,
 .input-box:not(:placeholder-shown)+.signin-label {
-    top: 10px;
-    left: 30px;
+    top: 15px;
+    left: 15px;
     font-size: 12px;
     color: #2475D6;
 }

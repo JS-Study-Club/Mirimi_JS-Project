@@ -28,28 +28,29 @@
                 <form action="sing-up.php" method="post" class="form" id="regist_form" name="regist_form"
                     onsubmit="return getinfo()">
                     <div class="input-container">
+                        <input class="input-box" type="text" required placeholder=" " id="user_id"
+                            name="user_id">
+                        <label for="user-id" class="signin-label">ID</label>
+                    </div>
+                    <div class="id_check">
+                        <button type="button" onclick="checkId()" id="check_button">아이디 중복체크</button>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-box" type="password" required placeholder=" " id="user_pw"
+                            name="user_pw">
+                        <label for="password" class="signin-label">PW</label>
+                    </div>
+                    <div class="input-container">
                         <input class="input-box" type="text" maxlength="4" required placeholder=" " id="user_grade"
                             name="user_grade">
                         <label for="grda" class="signin-label">학번</label>
                     </div>
                     <div class="input-container">
-                        <input class="input-box" type="text" maxlength="5" required placeholder=" " id="user_name"
+                        <input class="input-box" type="text" required placeholder=" " id="user_name"
                             name="user_name">
                         <label for="name" class="signin-label">이름</label>
                     </div>
-                    <div class="input-container">
-                        <input class="input-box" type="text" maxlength="16" required placeholder=" " id="user_id"
-                            name="user_id">
-                        <label for="user-id" class="signin-label">ID</label>
-                    </div>
-                    <div id="id_check">
-                        <input type="button" id="check_button" value="ID 중복체크" onclick="checkId();">
-                    </div>
-                    <div class="input-container">
-                        <input class="input-box" type="password" maxlength="16" required placeholder=" " id="user_pw"
-                            name="user_pw">
-                        <label for="password" class="signin-label">PW</label>
-                    </div>
+                    
                     <button id="login-button">
                         <p class="login-text">회원가입</p>
                     </button>
@@ -57,7 +58,7 @@
             </div>
         </div>
         <div>
-            <a href="index.php" id="go-back" class="else-button">뒤로가기</a> |
+            <a href="index.php" id="go-back" class="else-button">돌아가기</a> |
             <a href="login.php" class="else-button">로그인</a>
         </div>
     </div>

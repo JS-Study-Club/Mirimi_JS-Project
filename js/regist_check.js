@@ -1,9 +1,9 @@
-
+var userid;
 
 function checkId() {
     var left = Math.ceil((window.screen.width - 500) / 2);
     var top = Math.ceil((window.screen.height - 300) / 2);
-    var userid = document.getElementById("user-id").value;
+    userid = document.getElementById("user_id").value;
     var win = window.open("regist_proc.php?userid=" + userid, "Idcheck", `width=500, height=300, top=${top}, left=${left}`);
 }
 
