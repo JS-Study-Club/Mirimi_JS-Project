@@ -17,8 +17,8 @@
         echo "<script>
         location.href = \"my-page.php\";
         </script>";
-    } else { 
-    ?>
+    } else {
+        ?>
         <div id="total-screen">
             <img src="../img/js_logo.png" alt="js-logo" id="top-js-logo">
             <div id="input-set">
@@ -29,8 +29,7 @@
                             <label for="user-id" class="signin-label">ID</label>
                         </div>
                         <div class="input-container">
-                            <input class="input-box" type="password" placeholder=" " id="user-pw"
-                                name="user-pw">
+                            <input class="input-box" type="password" placeholder=" " id="user-pw" name="user-pw">
                             <label for="user-pw" class="signin-label">PW</label>
                         </div>
                         <p><input type="submit" value="로그인" id="login-button" class="login-text"></p>

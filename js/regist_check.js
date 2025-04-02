@@ -4,7 +4,7 @@ function checkId() {
     var left = Math.ceil((window.screen.width - 500) / 2);
     var top = Math.ceil((window.screen.height - 300) / 2);
     userid = document.getElementById("user_id").value;
-    var win = window.open("regist_proc.php?userid=" + userid, "Idcheck", `width=500, height=300, top=${top}, left=${left}`);
+    var win = window.open("duplicated_check.php?userid=" + userid, "Idcheck", `width=500, height=300, top=${top}, left=${left}`);
 }
 
 function grade_sendit() {
@@ -75,4 +75,15 @@ function pw_sendit() {
     }
 
     return false;
+}
+
+function joinCheck() {
+    const temp = document.getElementById("user_id").value;
+    // console.log(temp);
+    // console.log(userid);
+    if (temp != userid) {
+        alert("아이디 중복 체크를 해 주십시오");
+        return false;
+    }
+    return true;
 }
