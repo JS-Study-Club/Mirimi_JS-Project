@@ -157,10 +157,10 @@ if (isset($_SESSION['name'])) {
         </div>
     </footer>
     <script>
-            background();
-            setInterval(current_time, 1000);
-            current_time();
-        </script>
+        background();
+        setInterval(current_time, 1000);
+        current_time();
+    </script>
 
     <script>
         <?php

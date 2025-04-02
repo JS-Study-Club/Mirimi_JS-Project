@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="../css/sign-up.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css" />
     <script src="../js/regist_check.js"></script>
+    <script>
+        function getinfo() {
+            if (grade_sendit() && id_sendit() && pw_sendit()) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -16,7 +26,7 @@
         <div id="input-set">
             <div id="form-set">
                 <form action="sing-up.php" method="post" class="form" id="regist_form" name="regist_form"
-                    onsubmit="sendit()">
+                    onsubmit="return getinfo()">
                     <div class="input-container">
                         <input class="input-box" type="text" maxlength="4" required placeholder=" " id="user_grade"
                             name="user_grade">
@@ -28,7 +38,7 @@
                         <label for="name" class="signin-label">이름</label>
                     </div>
                     <div class="input-container">
-                        <input class="input-box" type="text" maxlength="20" required placeholder=" " id="user_id"
+                        <input class="input-box" type="text" maxlength="16" required placeholder=" " id="user_id"
                             name="user_id">
                         <label for="user-id" class="signin-label">ID</label>
                     </div>
@@ -36,7 +46,7 @@
                         <input type="button" id="check_button" value="ID 중복체크" onclick="checkId();">
                     </div>
                     <div class="input-container">
-                        <input class="input-box" type="password" maxlength="20" required placeholder=" " id="user_pw"
+                        <input class="input-box" type="password" maxlength="16" required placeholder=" " id="user_pw"
                             name="user_pw">
                         <label for="password" class="signin-label">PW</label>
                     </div>

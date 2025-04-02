@@ -30,8 +30,11 @@ function getTimeTable(grade, class_nm) {
                     if (typeof timeTableList[col][row] === 'undefined') {
                         rowHTML += "<td></td>";
                     } else {
-                        let subject = timeTableList[col][row];//.replace(/\*/g, ""); // * 제거
-                        // console.log(subject);
+                        let subject = timeTableList[col][row];
+                        if (subject.includes('*')) {
+                            subject = subject.replace(/\*/g, ""); // * 제거
+                        }
+                        //console.log(subject);
                         rowHTML += `<td>${subject}</td>`;
                     }
                 }
@@ -52,7 +55,7 @@ function getTimeTable(grade, class_nm) {
             .then(data => {
                 let Table = data.hisTimetable[1].row;
 
-                console.log(Table);
+                //console.log(Table);
                 var end = 0;
                 if (dayCount == 0 || dayCount == 4) {
                     end = 6;
