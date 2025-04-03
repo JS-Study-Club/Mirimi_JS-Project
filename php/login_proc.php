@@ -6,7 +6,7 @@ $id = $_POST['user-id'];
 $pw = $_POST['user-pw'];
 
 //아이디 존재 여부 검사
-$sql = "select * from mirimi_users where user_id='$id'";
+$sql = "SELECT * FROM mirimi_users WHERE user_id='$id'";
 $result = mysqli_query($db_conn, $sql);
 $row = mysqli_fetch_array($result);
 

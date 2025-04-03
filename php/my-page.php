@@ -37,13 +37,37 @@ if ($_SESSION['id'] != $id) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirimi - 마이페이지</title>
+    <link rel="stylesheet" href="../css/my-page.css">
+    <script>
+        function withdrawCheck() {
+            const check = confirm("정말 탈퇴하시겠습니까?");
+            if (check) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <form action="../php/logout.php">
-        <input type="submit" name="logout" id="logout" value="로그아웃">
-        <input type="button" value="돌아가기" onclick="location.href='index.php'" >
-    </form>
+    <div id="menu">
+        <form action="../php/logout.php" class="menu_button">
+            <input type="submit" name="logout" id="logout" value="로그아웃">
+        </form>
+        <form action="../php/index.php" class="menu_button">
+            <input type="submit" value="돌아가기">
+        </form>
+        <form action="../php/mychange.php" class="menu_button">
+            <input type="submit" name="change" id="change" value="학년/반 수정하기">
+        </form>
+        <form action="../php/withdraw.php" class="menu_button" onclick="return withdrawCheck()">
+            <input type="submit" name="withdraw" id="withdraw" value="회원 탈퇴하기">
+        </form>
+    </div>
+
+
 
     <p>ID: <?php echo ($_SESSION['id']); ?></p>
     <p>NAME: <?php echo ($_SESSION['name']); ?></p>

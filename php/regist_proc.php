@@ -23,6 +23,6 @@ if ($result === false) { /* === 이면 자료형까지 일치하는지 확인 */
         location.href = "my-page.php"
     </script>;
 
-<?php
+    <?php
 }
 ?>

@@ -1,0 +1,7 @@
+#menu {
+    display: flex;
+}
+
+.menu_button > input {
+    margin-right: 0.5vw;
+}
