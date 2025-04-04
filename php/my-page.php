@@ -1,5 +1,15 @@
 <?php
 include "db_conn.php";
+$my_info;
+if (isset($_SESSION['name'])) {
+    $user_grade = $_SESSION['grade'];
+    $user_class = $_SESSION['class'];
+    $user_name = $_SESSION['name'];
+    $my_info = $user_grade . '학년 ' . $user_class . '반 ' . $user_name;
+} else {
+    $user_name = '로그인 필요';
+    $my_info = $user_name;
+}
 
 // 세션 확인 및 보안 처리
 if (!isset($_SESSION['id'])) {
@@ -38,6 +48,9 @@ if ($_SESSION['id'] != $id) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirimi - 마이페이지</title>
     <link rel="stylesheet" href="../css/my-page.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/screen.js"></script>
     <script>
         function withdrawCheck() {
             const check = confirm("정말 탈퇴하시겠습니까?");
@@ -52,6 +65,62 @@ if ($_SESSION['id'] != $id) {
 </head>
 
 <body>
+<header>
+        <div id="moon"></div>
+        <div id="info">
+            <span id="account_cir"><img src="../img/eva_person-outline.png"></span>
+            <span id="stu_id">
+                <?php
+                echo $my_info;
+                ?>
+            </span>
+        </div>
+        <div id="me">
+            <a href="timetable.php" class="menu">
+                <div>
+                    <img src="../img/School.png" class="menu_img">
+                    <span class="menu_text">시간표</span>
+                </div>
+            </a>
+            <a href="" class="menu">
+                <div>
+                    <img src="../img/Board.png" class="menu_img">
+                    <span class="menu_text">게시판</span>
+                </div>
+            </a>
+            <a href="notice_writing.html" class="menu">
+                <div>
+                    <img src="../img/pen-to-square.png" class="menu_img">
+                    <span class="menu_text">글 작성</span>
+                </div>
+            </a>
+            <a href="index.php" class="menu">
+                <div>
+                    <img src="../img/Rice.png" class="menu_img">
+                    <span class="menu_text">급식표</span>
+                </div>
+            </a>
+        </div>
+        <div id="date">
+            <div class="choice-date">
+                <input type="date" id="dateInput">
+                <script>
+                    date = new Date();
+                    document.getElementById('dateInput').valueAsDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+                </script>
+            </div>
+            <div class="input-date">
+                <button type="button">
+                    <img src="../img/Find.png" onclick="toInfo()" class="button-img">
+                </button>
+            </div>
+        </div>
+        <a href="../php/login.php" id="mypage_icon">
+            <div id="mypage_img">
+                <img src="../img/eva_person-outline.png">
+            </div>
+        </a>
+    </header>
     <div id="menu">
         <form action="../php/logout.php" class="menu_button">
             <input type="submit" name="logout" id="logout" value="로그아웃">
@@ -73,6 +142,61 @@ if ($_SESSION['id'] != $id) {
     <p>NAME: <?php echo ($_SESSION['name']); ?></p>
     <p>GRADE: <?php echo ($_SESSION['grade']); ?></p>
     <p>CLASS: <?php echo ($_SESSION['class']); ?></p>
+
+
+    <div id="rec">
+        <div id="blue_box">
+            <span id="date2"></span>
+            <div id="time_box">
+                <span id="ampm"></span>
+                <span id="time"></span>
+            </div>
+        </div>
+
+        <div id="beige_box">
+            <a href="timetable.php">
+                <div id="class_table">
+                    <div><img src="../img/School.png"></div>
+                    <div><span>
+                            우리반 <br>
+                            시간표 보기
+                        </span></div>
+                </div>
+            </a>
+
+            <a href="">
+                <div id="board">
+                    <div><img src="../img/Board.png"></div>
+                    <div><span>
+                            우리학교 도움 <br>
+                            요청 게시판 보기
+                        </span></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    </main>
+    <hr>
+    <footer>
+        <img src="../img/js_logo.png" id="footer_img">
+        <div id="footer_text">
+            <p><a href="">작성자저작권정보</a> | <a href="https://www.instagram.com/js_mirim/">JS인스타공개</a> | <a
+                    href="https://www.e-mirim">학교정보공개</a></p>
+            <div id="information">
+                <p>서울시 관악구 호람로 546 (신림동) 미림마이스터고등학교 JS 스터디 커뮤니티 센터</p>
+                <p>JS 부장 s2455@e-mirim.hs.kr | JS 부부장 s2455@e-mirim.hs.kr | 디자인팀 김설애 | 개발팀 김민재 / 곽자경 / 윤시웅 / 이서영</p>
+                <p>546 Hoam-ro, Gwanak-gu, Seoul, 08821 Korea | MIRIM MEISTER SCHOOL JS STUDY</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        setInterval(current_time, 1000);
+        current_time();
+
+        background(); // 페이지 로드 시 실행
+        // setStuID();\
+    </script>
 </body>
 
 </html>

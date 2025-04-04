@@ -3,6 +3,7 @@ header {
     justify-content: space-around;
     margin-top: 30px;
     margin-bottom: 1.5vw;
+    text-decoration-line: none;
 }
 
 header span {
@@ -61,7 +62,6 @@ input {
     text-align: center;
     justify-content: center;
     align-content: center;
-    margin-left: -1vw;
 }
 
 #stu_id {

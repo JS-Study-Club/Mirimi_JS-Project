@@ -39,6 +39,7 @@ footer{
     gap: 2vw;
     font-family: "Noto Nastaliq Urdu";
     color: #929292;
+    text-decoration-line: none;
 }  
 #footer_img{
     margin-top: 0.5vw;
@@ -74,6 +75,7 @@ footer hr{
     column-gap: 20vw;
     align-items: center;
     justify-content: center;
+    text-decoration-line: none;
 }
 
 #blue_box{
