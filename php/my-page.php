@@ -65,7 +65,7 @@ if ($_SESSION['id'] != $id) {
 </head>
 
 <body>
-<header>
+    <header>
         <div id="moon"></div>
         <div id="info">
             <span id="account_cir"><img src="../img/eva_person-outline.png"></span>
@@ -77,25 +77,25 @@ if ($_SESSION['id'] != $id) {
         </div>
         <div id="me">
             <a href="timetable.php" class="menu">
-                <div>
+                <div class="menu_button">
                     <img src="../img/School.png" class="menu_img">
                     <span class="menu_text">시간표</span>
                 </div>
             </a>
             <a href="" class="menu">
-                <div>
+                <div class="menu_button">
                     <img src="../img/Board.png" class="menu_img">
                     <span class="menu_text">게시판</span>
                 </div>
             </a>
             <a href="notice_writing.html" class="menu">
-                <div>
+                <div class="menu_button">
                     <img src="../img/pen-to-square.png" class="menu_img">
                     <span class="menu_text">글 작성</span>
                 </div>
             </a>
             <a href="index.php" class="menu">
-                <div>
+                <div class="menu_button">
                     <img src="../img/Rice.png" class="menu_img">
                     <span class="menu_text">급식표</span>
                 </div>
@@ -121,27 +121,31 @@ if ($_SESSION['id'] != $id) {
             </div>
         </a>
     </header>
-    <div id="menu">
-        <form action="../php/logout.php" class="menu_button">
-            <input type="submit" name="logout" id="logout" value="로그아웃">
-        </form>
-        <form action="../php/index.php" class="menu_button">
-            <input type="submit" value="돌아가기">
-        </form>
-        <form action="../php/mychange.php" class="menu_button">
-            <input type="submit" name="change" id="change" value="학년/반 수정하기">
-        </form>
-        <form action="../php/withdraw.php" class="menu_button" onclick="return withdrawCheck()">
-            <input type="submit" name="withdraw" id="withdraw" value="회원 탈퇴하기">
-        </form>
-    </div>
+
+    <main>
+        <div id="menu">
+            <form action="../php/logout.php" class="menu_button">
+                <input type="submit" name="logout" id="logout" value="로그아웃">
+            </form>
+            <form action="../php/index.php" class="menu_button">
+                <input type="submit" value="돌아가기">
+            </form>
+            <form action="../php/mychange.php" class="menu_button">
+                <input type="submit" name="change" id="change" value="학년/반 수정하기">
+            </form>
+            <form action="../php/withdraw.php" class="menu_button" onclick="return withdrawCheck()">
+                <input type="submit" name="withdraw" id="withdraw" value="회원 탈퇴하기">
+            </form>
+        </div>
 
 
 
-    <p>ID: <?php echo ($_SESSION['id']); ?></p>
-    <p>NAME: <?php echo ($_SESSION['name']); ?></p>
-    <p>GRADE: <?php echo ($_SESSION['grade']); ?></p>
-    <p>CLASS: <?php echo ($_SESSION['class']); ?></p>
+        <p>ID: <?php echo ($_SESSION['id']); ?></p>
+        <p>NAME: <?php echo ($_SESSION['name']); ?></p>
+        <p>GRADE: <?php echo ($_SESSION['grade']); ?></p>
+        <p>CLASS: <?php echo ($_SESSION['class']); ?></p>
+    </main>
+
 
 
     <div id="rec">
@@ -181,7 +185,7 @@ if ($_SESSION['id'] != $id) {
         <img src="../img/js_logo.png" id="footer_img">
         <div id="footer_text">
             <p><a href="">작성자저작권정보</a> | <a href="https://www.instagram.com/js_mirim/">JS인스타공개</a> | <a
-                    href="https://www.e-mirim">학교정보공개</a></p>
+                    href="https://www.e-mirim.hs.kr">학교정보공개</a></p>
             <div id="information">
                 <p>서울시 관악구 호람로 546 (신림동) 미림마이스터고등학교 JS 스터디 커뮤니티 센터</p>
                 <p>JS 부장 s2455@e-mirim.hs.kr | JS 부부장 s2455@e-mirim.hs.kr | 디자인팀 김설애 | 개발팀 김민재 / 곽자경 / 윤시웅 / 이서영</p>
@@ -189,14 +193,7 @@ if ($_SESSION['id'] != $id) {
             </div>
         </div>
     </footer>
-    
-    <script>
-        setInterval(current_time, 1000);
-        current_time();
-
-        background(); // 페이지 로드 시 실행
-        // setStuID();\
-    </script>
+    <script src="../js/screen_start.js"></script>
 </body>
 
 </html>

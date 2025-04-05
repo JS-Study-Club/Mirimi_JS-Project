@@ -5,3 +5,7 @@
 .menu_button > input {
     margin-right: 0.5vw;
 }
+
+.menu {
+    align-items: center;
+}

@@ -1,18 +1,14 @@
 @import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
-*{
+
+* {
     text-decoration: none;
 }
-html{
+
+html {
     margin: 0;
     padding: 0;
     height: 100%;
 }
-
-
-#date {
-    margin-right: -5vw;
-}
-
 
 
 aside {
@@ -39,7 +35,7 @@ aside {
     font-size: 1.3vmax;
     text-decoration: none;
     color: black;
-    
+
 }
 
 .clicked {
@@ -83,14 +79,15 @@ main {
     text-align: center;
 }
 
-.menuList > li {
+.menuList>li {
     margin-bottom: 0.5vw;
 }
 
 
 
 #current_time_text {
-    position: absolute; bottom: 1vw;
+    position: absolute;
+    bottom: 1vw;
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.8vw;

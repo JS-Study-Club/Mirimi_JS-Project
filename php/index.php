@@ -40,25 +40,25 @@ if (isset($_SESSION['name'])) {
         </div>
         <div id="me">
             <a href="timetable.php" class="menu">
-                <div>
+                <div class="menu_button">
                     <img src="../img/School.png" class="menu_img">
                     <span class="menu_text">시간표</span>
                 </div>
             </a>
             <a href="" class="menu">
-                <div>
+                <div class="menu_button">
                     <img src="../img/Board.png" class="menu_img">
                     <span class="menu_text">게시판</span>
                 </div>
             </a>
             <a href="notice_writing.html" class="menu">
-                <div>
+                <div class="menu_button">
                     <img src="../img/pen-to-square.png" class="menu_img">
                     <span class="menu_text">글 작성</span>
                 </div>
             </a>
             <a href="index.php" class="menu">
-                <div>
+                <div class="menu_button">
                     <img src="../img/Rice.png" class="menu_img">
                     <span class="menu_text">급식표</span>
                 </div>
@@ -148,7 +148,7 @@ if (isset($_SESSION['name'])) {
         <img src="../img/js_logo.png" id="footer_img">
         <div id="footer_text">
             <p><a href="">작성자저작권정보</a> | <a href="https://www.instagram.com/js_mirim/">JS인스타공개</a> | <a
-                    href="https://www.e-mirim">학교정보공개</a></p>
+                    href="https://www.e-mirim.hs.kr">학교정보공개</a></p>
             <div id="information">
                 <p>서울시 관악구 호람로 546 (신림동) 미림마이스터고등학교 JS 스터디 커뮤니티 센터</p>
                 <p>JS 부장 s2455@e-mirim.hs.kr | JS 부부장 s2455@e-mirim.hs.kr | 디자인팀 김설애 | 개발팀 김민재 / 곽자경 / 윤시웅 / 이서영</p>
@@ -158,9 +158,6 @@ if (isset($_SESSION['name'])) {
     </footer>
 
     <script>
-        setInterval(current_time, 1000);
-        current_time();
-
         function nearbyToday(day) {
             now = new Date();
             date = new Date(now.setDate(now.getDate() + day));
@@ -174,11 +171,12 @@ if (isset($_SESSION['name'])) {
             getMealInfo(document.getElementById("dateInput").value.toString().replace(/-/g, ''));
         }
 
-        background(); // 페이지 로드 시 실행
+        
         // setStuID();
 
         init();
     </script>
+    <script src="../js/screen_start.js"></script>
 </body>
 
 </html>
