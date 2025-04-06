@@ -121,29 +121,36 @@ if ($_SESSION['id'] != $id) {
             </div>
         </a>
     </header>
-
+    <hr>
     <main>
-        <div id="menu">
-            <form action="../php/logout.php" class="menu_button">
-                <input type="submit" name="logout" id="logout" value="로그아웃">
-            </form>
-            <form action="../php/index.php" class="menu_button">
-                <input type="submit" value="돌아가기">
-            </form>
-            <form action="../php/mychange.php" class="menu_button">
-                <input type="submit" name="change" id="change" value="학년/반 수정하기">
-            </form>
-            <form action="../php/withdraw.php" class="menu_button" onclick="return withdrawCheck()">
-                <input type="submit" name="withdraw" id="withdraw" value="회원 탈퇴하기">
-            </form>
+        <div class="box">
+            <div class="my-page">
+                <div id="acc_info">
+                    <span id="acc_cir">
+                        <img src="../img/eva_person-outline.png">
+
+                    </span>
+                    <span id="my-info">
+                        <p id="my-id"><?php echo ($_SESSION['id']); ?></p>
+                        <p id="my-name"><?php echo ($my_info); ?></p>
+                    </span>
+
+                </div>
+
+                <div id="my_menu">
+                    <form action="../php/logout.php" class="my_menu_button">
+                        <input type="submit" name="logout" id="logout" value="로그아웃">
+                    </form>
+                    <form action="../php/mychange.php" class="my_menu_button">
+                        <input type="submit" name="change" id="change" value="학년/반 수정하기">
+                    </form>
+                    <form action="../php/withdraw.php" class="my_menu_button" onclick="return withdrawCheck()">
+                        <input type="submit" name="withdraw" id="withdraw" value="회원 탈퇴하기">
+                    </form>
+                </div>
+            </div>
+
         </div>
-
-
-
-        <p>ID: <?php echo ($_SESSION['id']); ?></p>
-        <p>NAME: <?php echo ($_SESSION['name']); ?></p>
-        <p>GRADE: <?php echo ($_SESSION['grade']); ?></p>
-        <p>CLASS: <?php echo ($_SESSION['class']); ?></p>
     </main>
 
 
