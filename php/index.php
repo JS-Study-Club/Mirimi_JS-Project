@@ -170,11 +170,8 @@ if (isset($_SESSION['name'])) {
         function toInfo() {
             getMealInfo(document.getElementById("dateInput").value.toString().replace(/-/g, ''));
         }
-
-        
-        // setStuID();
-
         init();
+        nearbyToday(0)
     </script>
     <script src="../js/screen_start.js"></script>
 </body>

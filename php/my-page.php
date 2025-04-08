@@ -141,8 +141,8 @@ if ($_SESSION['id'] != $id) {
                     <form action="../php/logout.php" class="my_menu_button">
                         <input type="submit" name="logout" id="logout" value="로그아웃">
                     </form>
-                    <form action="../php/mychange.php" class="my_menu_button">
-                        <input type="submit" name="change" id="change" value="학년/반 수정하기">
+                    <form action="../php/my-edit.php" class="my_menu_button">
+                        <input type="submit" name="change" id="change" value="내 정보 수정">
                     </form>
                     <form action="../php/withdraw.php" class="my_menu_button" onclick="return withdrawCheck()">
                         <input type="submit" name="withdraw" id="withdraw" value="회원 탈퇴하기">

@@ -34,6 +34,4 @@ if ($result === false) {
 
     <?php
 }
-
-in
     ?>

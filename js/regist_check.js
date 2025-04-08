@@ -15,7 +15,7 @@ function grade_sendit() {
         let gradeNum = user_grade.charAt(0); //학년
         let classNum = user_grade.charAt(1); //반
 
-        console.log(`학년: ${gradeNum}, 반: ${classNum}`);
+        //console.log(`학년: ${gradeNum}, 반: ${classNum}`);
     } else {
         alert("올바르지 않은 학번입니다.");
         return false;
@@ -31,16 +31,11 @@ function id_sendit() {
     const user_id = document.regist_form.user_id.value;
 
     if (regex1.test(user_id)) {
-        if (user_id.length >= 4 && user_id.length <= 16) {
-            if (!regex2.test(user_id)) {
-                return true;
-            }
-            else {
-                alert("아이디는 영문이 포함되어야 합니다.");
-            }
+        if (!regex2.test(user_id)) {
+            return true;
         }
         else {
-            alert("아이디는 4글자 이상, 16자 이하만 가능합니다.");
+            alert("아이디는 영문이 포함되어야 합니다.");
         }
     }
     else {
@@ -58,16 +53,11 @@ function pw_sendit() {
     const user_pw = document.regist_form.user_pw.value;
 
     if (regex1.test(user_pw)) {
-        if (user_pw.length >= 4 && user_pw.length <= 16) {
-            if (!regex2.test(user_pw)) {
-                return true;
-            }
-            else {
-                alert("비밀번호는 영문이 포함되어야 합니다.");
-            }
+        if (!regex2.test(user_pw)) {
+            return true;
         }
         else {
-            alert("비밀번호는 4글자 이상, 16자 이하만 가능합니다.");
+            alert("비밀번호는 영문이 포함되어야 합니다.");
         }
     }
     else {

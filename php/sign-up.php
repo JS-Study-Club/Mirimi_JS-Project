@@ -36,14 +36,14 @@
                     <form action="regist_proc.php" method="post" class="form" id="regist_form" name="regist_form"
                         onsubmit="return getinfo()">
                         <div class="input-container">
-                            <input class="input-box" type="text" required placeholder=" " id="user_id" name="user_id">
+                            <input class="input-box" type="text" minlength="4" maxlength="16" required placeholder=" " id="user_id" name="user_id">
                             <label for="user-id" class="signin-label">ID</label>
                         </div>
                         <div class="id_check">
                             <button type="button" onclick="checkId()" id="check_button">아이디 중복체크</button>
                         </div>
                         <div class="input-container">
-                            <input class="input-box" type="password" required placeholder=" " id="user_pw" name="user_pw">
+                            <input class="input-box" type="password" minlength="4" maxlength="16" required placeholder=" " id="user_pw" name="user_pw">
                             <label for="password" class="signin-label">PW</label>
                         </div>
                         <div class="input-container">
