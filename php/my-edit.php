@@ -34,11 +34,11 @@ $user_id = $_SESSION['id'];
                         <label for="name" class="signin-label">이름</label>
                     </div>
                     <div class="input-container">
-                        <input class="input-box" type="number" min="1" max="3" required placeholder=" " id="user_class" name="user_class" value="<?php echo $user_grade; ?>">
+                        <input class="input-box" type="number" min="1" max="3" required placeholder=" " id="user_grade" name="user_grade" value="<?php echo $user_grade; ?>">
                         <label for="class" class="signin-label">학년</label>
                     </div>
                     <div class="input-container">
-                        <input class="input-box" type="number" min="1" max="6" required placeholder=" " id="user_grade" name="user_grade" value="<?php echo $user_class; ?>">
+                        <input class="input-box" type="number" min="1" max="6" required placeholder=" " id="user_class" name="user_class" value="<?php echo $user_class; ?>">
                         <label for="grade" class="signin-label">반</label>
                     </div>
                     

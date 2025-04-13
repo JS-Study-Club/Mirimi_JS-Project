@@ -1,5 +1,6 @@
 <?php
 include("db_conn.php");
+session_start();
 
 $user_grade = $_POST["user_grade"];
 $id = $_POST["user_id"];

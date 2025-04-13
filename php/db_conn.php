@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 $host = 'localhost'; // MySQL 호스트
 $username = 'root'; // MySQL 사용자명
 $password = '000000'; // MySQL 비밀번호
