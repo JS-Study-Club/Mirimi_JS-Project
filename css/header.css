@@ -25,12 +25,12 @@ input {
     border-radius: 15px;
 }
 
-.input-date {
+#input-date {
     margin-top: -3vw;
     margin-left: 14.5vw;
 }
 
-.input-date>button {
+#input-date>button {
     margin-left: 0.4vw;
     margin-top: 0.6vw;
     background-color: rgba(0, 0, 0, 0);

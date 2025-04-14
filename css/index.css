@@ -71,7 +71,7 @@ main {
     text-align: center;
     font-family: Noto Sans KR;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.8vw;
 }
 
 .menuList {
@@ -81,9 +81,8 @@ main {
 
 .menuList>li {
     margin-bottom: 0.5vw;
+    font-size: 1.2vw;
 }
-
-
 
 #current_time_text {
     position: absolute;

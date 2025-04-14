@@ -19,7 +19,7 @@ if ($result === false) { /* === 이면 자료형까지 일치하는지 확인 */
 } else { ?>
     <script>
         alert("회원가입이 완료되었습니다.")
-        location.href = "my-page.php"
+        location.href = "../main/my-page.php"
     </script>;
 
     <?php

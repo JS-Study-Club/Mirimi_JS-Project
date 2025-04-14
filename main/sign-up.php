@@ -33,7 +33,7 @@
             <img src="../img/js_logo.png" alt="js-logo" id="top-js-logo">
             <div id="input-set">
                 <div id="form-set">
-                    <form action="regist_proc.php" method="post" class="form" id="regist_form" name="regist_form"
+                    <form action="../php/regist_proc.php" method="post" class="form" id="regist_form" name="regist_form"
                         onsubmit="return getinfo()">
                         <div class="input-container">
                             <input class="input-box" type="text" minlength="4" maxlength="16" required placeholder=" " id="user_id" name="user_id">

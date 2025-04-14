@@ -1,3 +1,5 @@
+
+
 function getMealInfo(date) {
   const API_KEY = "90de860d4ab54f7eb75640bf431149a4";
   const URL = "https://open.neis.go.kr/hub/mealServiceDietInfo";

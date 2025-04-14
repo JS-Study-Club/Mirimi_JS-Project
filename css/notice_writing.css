@@ -1,44 +1,52 @@
 #post_title{
     margin: 0.5vw;
-    margin-left: 1.2vw;
-    width: 11vw;
-    height: 7vh;
+    margin-left: 2.5vw;
+    width: 12vw;
+    height: 4vw;
     border: 1px solid #000;
     background: #FFF;
-    font-size: 20px;
+    font-size: 1.6vw;
     font-weight: 700;
     display: grid;
     place-items: center;
 }
-button{
-    margin: 0.8vh;
-    margin-top: 0.9vw;
+
+.button{
+    margin-top: 0.8vw;
+    margin-left: 0.8vw;
     width: 6vw;
-    height: 6vh;
+    height: 3.5vw;
     border-radius: 10px;
     border: 1px solid #000;
     background: #FFF;
     font-size: 16px;
     font-weight: 700;
 }
+
 #top{
     display: flex;
+    margin-top: 1vw;
     margin-left: 15vw;
 }
 #textbox{
     display: grid;
     place-items: center;
 }
-input[name="title"]{
+#title_text{
     height: 5vh;
     width: 65vw;
+    border-radius: 0px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
-textarea[name="detail"]{
+#contect_text{
     width: 65vw;
     height: 50vh;
     /* width: 1000px;
     height: 400px; */
     resize: none;
-    margin-top: -2vh;
+    margin-top: -1.1vw;
     margin-bottom: 5vh;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }

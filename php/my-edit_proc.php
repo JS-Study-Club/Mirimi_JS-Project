@@ -7,7 +7,7 @@ if (!isset($_SESSION['id'])) {
     ?>
     <script>
         alert("잘못된 접근입니다.");
-        location.href = "index.php";
+        location.href = "../main/index.php";
     </script>
     <?php
 }
@@ -29,7 +29,7 @@ if (in_array($id, $row1)) {
     ?>
     <script>
         alert("잘못된 접근입니다.");
-        location.href = "index.php";
+        location.href = "../main/index.php";
     </script>
     <?php
 }
@@ -44,6 +44,6 @@ mysqli_close($db_conn);
 
 echo "<script>
     alert(\"정보가 수정되었습니다.\")
-    location.href = \"my-page.php\";
+    location.href = \"../main/my-page.php\";
 </script>";
 ?>

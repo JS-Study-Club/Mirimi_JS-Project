@@ -38,7 +38,7 @@ if (!$row) { // 아이디가 존재하지 않으면 로그인 페이지로
         $_SESSION['class'] = $row['user_class'];
         mysqli_close($db_conn);
 
-        header("Location: my-page.php");
+        header("Location: ../main/my-page.php");
 
         // echo "<script>
         //     name = '$s_name';

@@ -23,7 +23,7 @@ $user_id = $_SESSION['id'];
         <img src="../img/js_logo.png" alt="js-logo" id="top-js-logo">
         <div id="input-set">
             <div id="form-set">
-                <form action="my-edit_proc.php" method="post" class="form" id="edit_form" name="edit_form"
+                <form action="../php/my-edit_proc.php" method="post" class="form" id="edit_form" name="edit_form"
                     onsubmit="return getinfo()">
                     <div class="input-container">
                         <input class="input-box" type="text" required placeholder=" " id="user_id" name="user_id"  disabled=true value="<?php echo $user_id; ?>">
