@@ -9,7 +9,7 @@ include("../php/page_my-info.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirimi - 게시판</title>
+    <title>Mirimi - 게시판 글쓰기</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/notice_writing.css">
@@ -26,11 +26,14 @@ include("../php/page_my-info.php");
     <hr>
     <main>
         <div id="top">
-            <div id="post_title">게시판 글쓰기</div>
-            <form action="">
+            <form action="../php/board_post" method="post">
                 <input type="submit" name="sumbit" id="submit" class="button" value="등록">
+                <button id="delete" class="button" onclick="delete_confirm()">삭제</button>
+                <div id="textbox">
+                    <input type="text" placeholder="제목을 입력하세요. (50자 이내)" id="title_text" name="title_text"> <br>
+                    <textarea placeholder="내용을 입력하세요. (500자 이내)" id="contect_text" name="contect_text"></textarea>
+                </div>
             </form>
-            <button id="delete" class="button" onclick="delete_confirm()">삭제</button>
         </div>
 
         <script>
@@ -40,11 +43,7 @@ include("../php/page_my-info.php");
                 }
             }
         </script>
-        <form action="#" method="post"></form> <!--게시판 페이지로 돌아감-->
-        <div id="textbox">
-            <input type="text" placeholder="제목을 입력하세요. (50자 이내)" id="title_text" name="title_text"> <br>
-            <textarea placeholder="내용을 입력하세요. (500자 이내)" id="contect_text" name="contect_text"></textarea>
-        </div>
+
     </main>
 
     <div id="rec">

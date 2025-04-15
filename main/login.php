@@ -45,7 +45,7 @@
             function login_check() {
                 var userid = document.getElementById("user-id");
                 var userpw = document.getElementById("user-pw");
-                alert(`${userid.value} / ${userpw.value}`);
+                //alert(`${userid.value} / ${userpw.value}`);
                 if (userid.value == "") {
                     alert("아이디를 입력해 주세요");
                     return false;

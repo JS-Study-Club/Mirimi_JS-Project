@@ -29,6 +29,7 @@
     margin-left: 15vw;
 }
 #textbox{
+    margin-top: 1vw;
     display: grid;
     place-items: center;
 }
@@ -36,8 +37,8 @@
     height: 5vh;
     width: 65vw;
     border-radius: 0px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 #contect_text{
     width: 65vw;
@@ -45,8 +46,8 @@
     /* width: 1000px;
     height: 400px; */
     resize: none;
-    margin-top: -1.1vw;
+    margin-top: -1.5vw;
     margin-bottom: 5vh;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
