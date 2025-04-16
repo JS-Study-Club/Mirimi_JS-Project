@@ -15,6 +15,15 @@ include("../php/page_my-info.php");
     <link rel="stylesheet" href="../css/notice_writing.css">
     <link rel="stylesheet" href="../css/footer.css">
     <script src="../js/screen.js"></script>
+    <script src="../js/board_post_check.js"></script>
+    <script>
+        function post_check() {
+            if (title_check() & contents_check()) {
+                return true;
+            }
+            return false;
+        }
+    </script>
 </head>
 
 <body>
@@ -25,25 +34,19 @@ include("../php/page_my-info.php");
     </header>
     <hr>
     <main>
+        <span id="post_title">게시판 글 작성</span>
         <div id="top">
-            <form action="../php/board_post" method="post">
+            <form action="../php/post_up.php" method="post" id="input_text" onsubmit="return post_check()">
                 <input type="submit" name="sumbit" id="submit" class="button" value="등록">
                 <button id="delete" class="button" onclick="delete_confirm()">삭제</button>
                 <div id="textbox">
-                    <input type="text" placeholder="제목을 입력하세요. (50자 이내)" id="title_text" name="title_text"> <br>
-                    <textarea placeholder="내용을 입력하세요. (500자 이내)" id="contect_text" name="contect_text"></textarea>
+                    <input type="text" placeholder="제목을 입력하세요. (50자 이내)" id="title_text" name="title_text"
+                        maxlength="50" minlength="3" required> <br>
+                    <textarea placeholder="내용을 입력하세요. (500자 이내)" id="contents_text" name="contents_text" maxlength="500"
+                        minlength="1" required></textarea>
                 </div>
             </form>
         </div>
-
-        <script>
-            function delete_confirm() {
-                if (confirm("정말 삭제하시겠습니까?")) {
-                    history.back();
-                }
-            }
-        </script>
-
     </main>
 
     <div id="rec">
@@ -93,6 +96,13 @@ include("../php/page_my-info.php");
     </footer>
 
     <script src="../js/screen_start.js"></script>
+    <script>
+        function delete_confirm() {
+            if (confirm("정말 삭제하시겠습니까?")) {
+                history.back();
+            }
+        }
+    </script>
 </body>
 
 </html>

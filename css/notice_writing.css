@@ -1,6 +1,6 @@
 #post_title{
     margin: 0.5vw;
-    margin-left: 2.5vw;
+    margin-left: 17.4%;
     width: 12vw;
     height: 4vw;
     border: 1px solid #000;
@@ -13,21 +13,22 @@
 
 .button{
     margin-top: 0.8vw;
-    margin-left: 0.8vw;
+    margin-right: 0.8vw;
     width: 6vw;
     height: 3.5vw;
-    border-radius: 10px;
+    border-radius: 1vw;
     border: 1px solid #000;
     background: #FFF;
-    font-size: 16px;
+    font-size: 1.5vw;
     font-weight: 700;
 }
 
 #top{
     display: flex;
-    margin-top: 1vw;
-    margin-left: 15vw;
+    justify-content: center;
 }
+
+
 #textbox{
     margin-top: 1vw;
     display: grid;
@@ -40,13 +41,13 @@
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
-#contect_text{
+#contents_text{
     width: 65vw;
     height: 50vh;
     /* width: 1000px;
     height: 400px; */
     resize: none;
-    margin-top: -1.5vw;
+    margin-top: -1vw;
     margin-bottom: 5vh;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
