@@ -43,17 +43,23 @@
         </div>
         <script>
             function login_check() {
-                var userid = document.getElementById("user-id");
-                var userpw = document.getElementById("user-pw");
+                var userid = document.getElementById("user-id").value;
+                var userpw = document.getElementById("user-pw").value;
                 //alert(`${userid.value} / ${userpw.value}`);
-                if (userid.value == "") {
+                if (userid == "") {
                     alert("아이디를 입력해 주세요");
                     return false;
-                };
-                if (userpw.value == "") {
+                }
+                if (userpw == "") {
                     alert("비밀번호를 입력해 주세요");
                     return false;
-                };
+                }
+                if (userid.includes(`'`) || userid.includes(`"`)) {
+                    alert(`따옴표 혹은 쌍따옴표는 허용되지 않습니다`);
+                    return false;
+                }
+                
+
                 return true;
             };
         </script>

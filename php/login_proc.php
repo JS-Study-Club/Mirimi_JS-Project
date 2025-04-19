@@ -14,7 +14,7 @@ $row = mysqli_fetch_array($result);
 if (!$row) { // 아이디가 존재하지 않으면 로그인 페이지로
     echo "<script> 
         alert(\"일치하는 아이디가 없습니다.\");
-        location.replace('login.php');
+        location.replace('../main/login.php');
         </script>";
 
     var_dump($sql); // 쿼리 확인
@@ -23,7 +23,7 @@ if (!$row) { // 아이디가 존재하지 않으면 로그인 페이지로
     if ($row['user_pw'] != $pw) { // 비밀번호 불일치 시 로그인 페이지로
         echo "<script>
                     alert(\"비밀번호가 일치하지 않습니다.\");
-                    location.replace('login.php');
+                    location.replace('../main/login.php');
                 </script>";
 
         exit;
