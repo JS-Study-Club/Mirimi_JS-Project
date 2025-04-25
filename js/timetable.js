@@ -54,18 +54,11 @@ function getTimeTable(grade, class_nm) {
             })
             .then(data => {
                 let Table = data.hisTimetable[1].row;
+                console.log(Table.length);
 
                 //console.log(Table);
-                var end = 0;
-                if (dayCount == 0 || dayCount == 4) {
-                    end = 6;
-                }
-                else {
-                    end = 7;
-                }
-                for (i = 0; i < end; i++) {
-                    // console.log(Table[i].ITRT_CNTNT);
-                    timeTableList[i][dayCount] = Table[i].ITRT_CNTNT;
+                for (i = 0; i < Table.length; i++) {
+                        timeTableList[i][dayCount] = Table[i].ITRT_CNTNT;
                 }
 
                 // 다음 요일로 이동

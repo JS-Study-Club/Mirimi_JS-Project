@@ -21,5 +21,5 @@ unset($_SESSION['name']);
 
 <script>
     alert("로그아웃 되었습니다.");
-    location.replace('../php/index.php');
+    location.replace('../main/index.php');
 </script>

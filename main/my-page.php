@@ -6,7 +6,7 @@ include("../php/page_my-info.php");
 if (!isset($_SESSION['id'])) {
     echo "<script>
         alert('로그인이 필요합니다.');
-        location.href = '../php/login.php';
+        location.href = '../main/login.php';
     </script>";
     exit;
 }
@@ -62,7 +62,7 @@ if (!isset($_SESSION['id'])) {
                     <form action="../php/logout.php" class="my_menu_button">
                         <input type="submit" name="logout" id="logout" value="로그아웃">
                     </form>
-                    <form action="../php/my-edit.php" class="my_menu_button">
+                    <form action="my-edit.php" class="my_menu_button">
                         <input type="submit" name="change" id="change" value="내 정보 수정">
                     </form>
                     <form action="../php/withdraw.php" class="my_menu_button" onclick="return withdrawCheck()">
