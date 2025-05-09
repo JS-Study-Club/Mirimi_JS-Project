@@ -4,7 +4,7 @@ function checkId() {
     var left = Math.ceil((window.screen.width - 500) / 2);
     var top = Math.ceil((window.screen.height - 300) / 2);
     userid = document.getElementById("user_id").value;
-    var win = window.open("duplicated_check.php?userid=" + userid, "Idcheck", `width=500, height=300, top=${top}, left=${left}`);
+    var win = window.open("../php/duplicated_check.php?userid=" + userid, "Idcheck", `width=500, height=300, top=${top}, left=${left}`);
 }
 
 function grade_sendit() {
